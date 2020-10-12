@@ -79,6 +79,7 @@ class Extended_PostInit_EventHandlers {
 };
 
 // Config features/fixes
+#include "configs\CfgArsenalStats.hpp";
 #include "configs\CfgBarrelSwaps.hpp";
 #include "configs\CfgDirectConnect.hpp";
 #include "configs\CfgEdenModules.hpp";
@@ -86,7 +87,7 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgExplosives.hpp";
 #include "configs\CfgLadderTweak.hpp";
 #include "configs\CfgMedicalEquipment.hpp";
-#include "configs\CfgSatcom.hpp";
+#include "configs\CfgRadioEquipment.hpp";
 #include "configs\CfgSupplyCrates.hpp";
 #include "configs\CfgUnitTrainerTools.hpp";
 #include "configs\CfgZeusActions.hpp";
