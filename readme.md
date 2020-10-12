@@ -35,9 +35,14 @@
 <p align="center"><sup><strong>Making Arma 3 a better place for all members of the 2nd Battalion, Nord Brigade.</strong></sup></p>
 
 ## Dependencies
+### Required
 - [CBA A3](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997)
 - [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057)
+
+### Recommended Mods
+Whilst 2BNB Essentials don't depend on the following mods (i.e. no error will show if they're not present), some functionality will be missing without them:
 - [Achilles](https://steamcommunity.com/sharedfiles/filedetails/?id=723217262)
+- [KLPQ Music Player](https://steamcommunity.com/sharedfiles/filedetails/?id=1241545493)
 - [TFAR 1.0 (BETA)](https://steamcommunity.com/sharedfiles/filedetails/?id=894678801)
 
 # Credits

@@ -1,23 +1,34 @@
-["2BNB Modules", "Add Barracks Functions",
-{
-	// Array of position AGLS, ObjNull or the object under the module as it's placed
-	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+[{isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")},{
+	["2BNB Modules", "Add Barracks Functions",
+	{
+		// Array of position AGLS, ObjNull or the object under the module as it's placed
+		params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	[_position, _objectUnderCursor] call bnb_es_core_fnc_addBarracks;
-}] call Ares_fnc_RegisterCustomModule;
+		[_position, _objectUnderCursor] call bnb_es_core_fnc_addBarracks;
+	}] call Ares_fnc_RegisterCustomModule;
 
-["2BNB Modules", "Add Music Radio",
-{
-	// Array of position AGLS, ObjNull or the object under the module as it's placed
-	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+	["2BNB Modules", "Force Respawn All",
+	{
+		[] call bnb_es_core_fnc_forceRespawn;
+	}] call Ares_fnc_RegisterCustomModule;
 
-	[_position, _objectUnderCursor] call bnb_es_core_fnc_addMusicRadio;
-}] call Ares_fnc_RegisterCustomModule;
 
-["2BNB Modules", "Force Respawn All",
-{
-	[] call bnb_es_core_fnc_forceRespawn;
-}] call Ares_fnc_RegisterCustomModule;
+	[{isClass (configFile >> "CfgPatches" >> "klpq_musicPlayer")},{
+		["2BNB Modules", "Add Music Radio",
+		{
+			// Array of position AGLS, ObjNull or the object under the module as it's placed
+			params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+			[_position, _objectUnderCursor] call bnb_es_core_fnc_addMusicRadio;
+		}] call Ares_fnc_RegisterCustomModule;
+	}, [], 0, {
+		["KLPQ Music Player not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	}] call CBA_fnc_waitUntilAndExecute;
+
+	["Zeus Modules loaded", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+}, [], 20, {
+	["Achilles is not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+}] call CBA_fnc_waitUntilAndExecute;
 
 private _bnb_es_settings = [
 	[

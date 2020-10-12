@@ -152,28 +152,33 @@ player addEventHandler ["Respawn", {
 	true
 ] call CBA_fnc_addKeybind;
 
-// TFAR Direct Speech Volume Change
-[
-	"2BNB",
-	"bnb_es_increaseSpeakVolume",
-	["Increase Direct Speech Volume", "Use this to increase direct speech volume until ""Yelling"""],
-	{
-	    [true] call bnb_es_core_fnc_changeSpeakVolume;
-	},
-	'',
-	[0xF8, [false, false, true]] // Alt + Mouse wheel Up
-] call CBA_fnc_addKeybind;
+[{isClass (configFile >> "CfgPatches" >> "tfar_core")},{
+	// TFAR Direct Speech Volume Change
+	[
+		"2BNB",
+		"bnb_es_increaseSpeakVolume",
+		["Increase Direct Speech Volume", "Use this to increase direct speech volume until ""Yelling"""],
+		{
+		    [true] call bnb_es_core_fnc_changeSpeakVolume;
+		},
+		'',
+		[0xF8, [false, false, true]] // Alt + Mouse wheel Up
+	] call CBA_fnc_addKeybind;
 
-[
-	"2BNB",
-	"bnb_es_decreaseSpeakVolume",
-	["Decrease Direct Speech Volume", "Use this to decrease direct speech volume until ""Whisper"""],
-	{
-	    [false] call bnb_es_core_fnc_changeSpeakVolume;
-	},
-	'',
-	[0xF9, [false, false, true]] // Alt + Mouse wheel Down
-] call CBA_fnc_addKeybind;
+	[
+		"2BNB",
+		"bnb_es_decreaseSpeakVolume",
+		["Decrease Direct Speech Volume", "Use this to decrease direct speech volume until ""Whisper"""],
+		{
+		    [false] call bnb_es_core_fnc_changeSpeakVolume;
+		},
+		'',
+		[0xF9, [false, false, true]] // Alt + Mouse wheel Down
+	] call CBA_fnc_addKeybind;
+}, [], 20, {
+	["TFAR is not loaded!", "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
+}] call CBA_fnc_waitUntilAndExecute;
+
 
 // Reduce the map volume
 addMissionEventHandler ["Map", {

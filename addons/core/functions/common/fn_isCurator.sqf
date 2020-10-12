@@ -16,7 +16,7 @@ Examples:
 Author:
 	Arend
 ---------------------------------------------------------------------------- */
-params[["_player", objNull, [objNull]]];
+params [["_player", player, [objNull]]];
 
 if (_player in (call bnb_es_core_fnc_getCurators)) exitWith {
 	true;

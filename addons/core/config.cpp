@@ -9,19 +9,14 @@ class CfgPatches {
 			"BNB_ES_Resupply_Class_C",
 
 			// CfgEdenModules
-			"BNB_ES_Supports_Module"
+			"BNB_ES_Barracks_Module"
 		};
 		weapons[] = {};
 		requiredAddons[] = {
-			"achilles_modules_f_ares",
-			"achilles_ui_f",
-			"achilles_functions_f_achilles",
-			"achilles_functions_f_ares",
 			"cba_settings",
 			"ace_arsenal",
 			"ace_explosives",
 			"ace_medical",
-			"tfar_core",
 			"A3_Modules_F"
 		};
 		author = "2nd Battalion, Nord Brigade";
