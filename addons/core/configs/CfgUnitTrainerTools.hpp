@@ -14,7 +14,7 @@ class CfgVehicles {
 			class BNB_ES_FullHeal {
 				displayName = "Heal player";
 				condition = "[_player] call bnb_es_core_fnc_isCurator";
-				statement = "[_target, _target] call ace_medical_treatment_fnc_fullHeal;hint ""Healed!"";";
+				statement = "[_player, _target] call ace_medical_treatment_fnc_fullHeal;hint format[""%1 healed!"", name _target];";
 				icon = "x\bnb_es\core\red-cross.paa";
 				position = "(_target selectionPosition [""spine3"", ""Memory""]) vectorAdd [0,0.1,0]";
 				distance = 4;
