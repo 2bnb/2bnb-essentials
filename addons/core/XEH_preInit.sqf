@@ -35,14 +35,14 @@ private _bnb_es_settings = [
 		"bnb_es_debug",
 		"CHECKBOX",
 		["Enable Debug", "Tick enable 2BNB debug messages to appear in RPT and systemChat"],
-		"2BNB Utilities",
+		["2BNB Common", "Development"],
 		false
 	],
 	[
 		"bnb_es_arsenal_objects",
 		"EDITBOX",
 		["Arsenal Objects", "Classnames, separated by commas and without double quotations, of objects that are spawnable by ""Add Filtered Arsenal"" module"],
-		["2BNB Zeus", "Arsenal"],
+		["2BNB Zeus", "Modules"],
 		"C_supplyCrate_F,B_Slingload_01_Ammo_F"
 	],
 	[
@@ -60,7 +60,7 @@ private _bnb_es_settings = [
 		"bnb_es_map_volume",
 		"SLIDER",
 		["Map Volume", "Volume to set when in a vehicle and looking at the map (so that you don't have to listen to loud as fuck helicopter rotors)"],
-		["2BNB Gear", "Common"],
+		"2BNB Common",
 		[0, 1, 0.20, 2]
 	],
 	[
