@@ -184,20 +184,21 @@ player addEventHandler ["Respawn", {
 addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
 
-
-	if (isNil "bnb_es_restoredVolume") then {
-		bnb_es_restoredVolume = missionNamespace getVariable ["acex_volume_initialGameVolume", soundVolume];
-	};
-
 	if (_mapIsOpened) then {
+
+		bnb_es_restoredVolume = missionNamespace getVariable ["acex_volume_initialGameVolume", soundVolume];
+
+		// If player is not in a vehicle, then forget about it!
 		if (vehicle player == player) exitWith {};
 
+		ace_hearing_disableVolumeUpdate = true;
 		0.1 fadeSound bnb_es_map_volume;
 		["Lowered volume in map", "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
 
 	} else {
 
 		if (isNil "acex_volume_isLowered") then {
+			ace_hearing_disableVolumeUpdate = false;
 
 			0.1 fadeSound bnb_es_restoredVolume;
 			[format["Restored volume from map to %1", bnb_es_restoredVolume], "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
