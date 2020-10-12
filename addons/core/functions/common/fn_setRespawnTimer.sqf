@@ -28,5 +28,5 @@ params [["_time", 0, [0]]];
 	"bnb_es_respawn_timer_event"
 ] call CBA_fnc_globalEventJIP;
 
-[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime]] call Ares_fnc_ShowZeusMessage;
+[format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime]] call bnb_es_core_fnc_notifyZeus;
 [format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime], "core\functions\common\fn_setRespawnTimer.sqf"] call bnb_es_core_fnc_log;

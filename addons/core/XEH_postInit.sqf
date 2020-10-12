@@ -115,7 +115,7 @@ player addEventHandler ["Killed", {
 		};
 	};
 
-	[format["%1 just died!", name _player]] remoteExec ["Ares_fnc_ShowZeusMessage", _curators];
+	[format["%1 just died!", name _player]] remoteExec ["bnb_es_core_fnc_notifyZeus", _curators];
 	_player setVariable ["bnb_es_diedAt", serverTime, true];
 	[format["%1 died at: %2", name _player, _player getVariable "bnb_es_diedAt"], "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
 }];
@@ -123,7 +123,7 @@ player addEventHandler ["Killed", {
 player addEventHandler ["Respawn", {
 	params ["_player", "_corpse"];
 
-	[format["%1 has just respawned!", name _player]] remoteExec ["Achilles_fnc_showZeusErrorMessage", call bnb_es_core_fnc_getCurators];
+	[["%1 has just respawned!", name _player], "warning"] remoteExec ["bnb_es_core_fnc_notifyZeus", call bnb_es_core_fnc_getCurators];
 	[format["%1 respawned at: %2. Died at: %3", name _player, serverTime, _player getVariable "bnb_es_diedAt"], "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
 }];
 

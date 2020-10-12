@@ -72,7 +72,7 @@ if (isNull (_objects select 0)) then {
 		// No object selected to be spawned
 		_objects = [localize "STR_AMAE_OBJECTS"] call Achilles_fnc_SelectUnits;
 		[format["No objects selected: %1", _objects], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
-		if (_objects isEqualTo [] || !(_objects isEqualType [])) exitWith {[localize "STR_AMAE_NO_OBJECT_SELECTED"] call Achilles_fnc_ShowZeusErrorMessage};
+		if (_objects isEqualTo [] || !(_objects isEqualType [])) exitWith {[localize "STR_AMAE_NO_OBJECT_SELECTED", "error"] call bnb_es_core_fnc_notifyZeus};
 
 	} else {
 		// Object selected to be spawned
@@ -112,4 +112,4 @@ if (_hasSpectator isEqualTo 0) then {
 };
 
 // Show Message
-["Barracks functions added!"] call Ares_fnc_ShowZeusMessage;
+["Barracks functions added!"] call bnb_es_core_fnc_notifyZeus;

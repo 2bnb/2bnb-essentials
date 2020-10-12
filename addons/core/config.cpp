@@ -44,6 +44,7 @@ class CfgFunctions {
 			class getDeadPlayers {};
 			class isCurator {};
 			class listDeadPlayers {};
+			class notifyZeus {};
 			class openTimerUI {};
 			class setRespawnTimer {};
 		};
