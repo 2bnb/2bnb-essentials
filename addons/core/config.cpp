@@ -2,12 +2,6 @@ class CfgPatches {
 	class bnb_es_core {
 		name = "2BNB Essentials - Core";
 		units[] = {
-			// CfgSupplyCrates
-			"BNB_ES_Resupply",
-			"BNB_ES_Resupply_Class_A",
-			"BNB_ES_Resupply_Class_B",
-			"BNB_ES_Resupply_Class_C",
-
 			// CfgEdenModules
 			"BNB_ES_Barracks_Module"
 		};
@@ -88,6 +82,5 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgLadderTweak.hpp";
 #include "configs\CfgMedicalEquipment.hpp";
 #include "configs\CfgRadioEquipment.hpp";
-#include "configs\CfgSupplyCrates.hpp";
 #include "configs\CfgUnitTrainerTools.hpp";
 #include "configs\CfgZeusActions.hpp";
