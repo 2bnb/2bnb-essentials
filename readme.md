@@ -40,10 +40,12 @@
 - [ACE3](https://steamcommunity.com/sharedfiles/filedetails/?id=463939057)
 
 ### Recommended Mods
-Whilst 2BNB Essentials don't depend on the following mods (i.e. no error will show if they're not present), some functionality will be missing without them:
+Whilst 2BNB Essentials don't depend on the following mods, some individual functionality will be missing without them:
 - [Achilles](https://steamcommunity.com/sharedfiles/filedetails/?id=723217262)
 - [KLPQ Music Player](https://steamcommunity.com/sharedfiles/filedetails/?id=1241545493)
 - [TFAR 1.0 (BETA)](https://steamcommunity.com/sharedfiles/filedetails/?id=894678801)
+- [ILBE Assault Pack - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=1875281645)
+- [Virolahti](https://steamcommunity.com/sharedfiles/filedetails/?id=1926513010)
 
 # Credits
 - GRAD developer, for their [gruppe_adler_mod](https://github.com/gruppe-adler/gruppe_adler_mod) and allowing us to use parts of it for the basis of some of our addons
