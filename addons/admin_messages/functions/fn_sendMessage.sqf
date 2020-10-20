@@ -17,8 +17,8 @@ if ([] call bnb_es_admin_messages_fnc_isAdminOrZeus) then {
 
 	private _receiveCondition = if ((call compile _lbData) < 0) then {
 		switch (call compile _lbData) do {
-			case (-2): {{true}};                                                //EVERYONE
-			case (-3): {{[] call bnb_es_admin_messages_fnc_isAdminOrZeus}};        //OTHER ADMINS AND ZEUS
+			case (-2): {{true}};												//EVERYONE
+			case (-3): {{[] call bnb_es_admin_messages_fnc_isAdminOrZeus}};		//OTHER ADMINS AND ZEUS
 			case (-4): {{playerSide == WEST}};
 			case (-5): {{playerSide == EAST}};
 			case (-6): {{playerSide == INDEPENDENT}};

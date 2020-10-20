@@ -4,8 +4,8 @@ private _newState = param [0, true];
 if (!_stHudEnabled) exitWith {};
 
 if (_newState) then {
-    STHud_UIMode = bnb_es_screenshotMode_stUIMode;
+	STHud_UIMode = bnb_es_screenshotMode_stUIMode;
 } else {
-    bnb_es_screenshotMode_stUIMode = STHud_UIMode;
-    STHud_UIMode = 0;
+	bnb_es_screenshotMode_stUIMode = STHud_UIMode;
+	STHud_UIMode = 0;
 };

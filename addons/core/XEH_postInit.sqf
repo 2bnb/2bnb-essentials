@@ -159,7 +159,7 @@ player addEventHandler ["Respawn", {
 		"bnb_es_increaseSpeakVolume",
 		["Increase Direct Speech Volume", "Use this to increase direct speech volume until ""Yelling"""],
 		{
-		    [true] call bnb_es_core_fnc_changeSpeakVolume;
+			[true] call bnb_es_core_fnc_changeSpeakVolume;
 		},
 		'',
 		[0xF8, [false, false, true]] // Alt + Mouse wheel Up
@@ -170,7 +170,7 @@ player addEventHandler ["Respawn", {
 		"bnb_es_decreaseSpeakVolume",
 		["Decrease Direct Speech Volume", "Use this to decrease direct speech volume until ""Whisper"""],
 		{
-		    [false] call bnb_es_core_fnc_changeSpeakVolume;
+			[false] call bnb_es_core_fnc_changeSpeakVolume;
 		},
 		'',
 		[0xF9, [false, false, true]] // Alt + Mouse wheel Down

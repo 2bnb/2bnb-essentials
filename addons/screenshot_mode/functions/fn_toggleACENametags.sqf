@@ -5,12 +5,12 @@ private _newState = param [0, true];
 if (!_aceEnabled) exitWith {};
 
 if (_newState) then {
-    _staminaBar ctrlShow bnb_es_screenshotMode_staminaBarContainer;
-    ace_nametags_showplayernames = bnb_es_screenshotMode_playerNames;
+	_staminaBar ctrlShow bnb_es_screenshotMode_staminaBarContainer;
+	ace_nametags_showplayernames = bnb_es_screenshotMode_playerNames;
 } else {
-    bnb_es_screenshotMode_staminaBarContainer = ctrlShown _staminaBar;
-    bnb_es_screenshotMode_playerNames = ace_nametags_showplayernames;
+	bnb_es_screenshotMode_staminaBarContainer = ctrlShown _staminaBar;
+	bnb_es_screenshotMode_playerNames = ace_nametags_showplayernames;
 
-    _staminaBar ctrlShow false;
-    ace_nametags_showplayernames = 0;
+	_staminaBar ctrlShow false;
+	ace_nametags_showplayernames = 0;
 };

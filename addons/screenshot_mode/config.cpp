@@ -7,7 +7,7 @@ class CfgPatches {
 		requiredAddons[] = {"bnb_es_core"};
 		units[] = {};
 		weapons[] = {};
-        authors[] = {"DerZade [A]"};
+		authors[] = {"DerZade [A]"};
 	};
 };
 

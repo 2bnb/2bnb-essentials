@@ -3,7 +3,7 @@ class Extended_PostInit_EventHandlers {
 };
 
 class Extended_PreInit_EventHandlers {
-    class bnb_es_screenshotMode {
-        clientInit = "call compile preprocessFileLineNumbers '\x\bnb_es\screenshot_mode\XEH_preClientInit.sqf';";
-    };
+	class bnb_es_screenshotMode {
+		clientInit = "call compile preprocessFileLineNumbers '\x\bnb_es\screenshot_mode\XEH_preClientInit.sqf';";
+	};
 };
