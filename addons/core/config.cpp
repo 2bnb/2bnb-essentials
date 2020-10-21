@@ -1,11 +1,19 @@
 class CfgPatches {
 	class bnb_es_core {
+		// Addon identity
 		name = "2BNB Essentials - Core";
-		units[] = {
-			// CfgEdenModules
-			"BNB_ES_Barracks_Module"
+		author = "2nd Battalion, Nord Brigade";
+		authors[] = {
+			"Ford",
+			"Arend"
 		};
-		weapons[] = {};
+		url = "https://discord.gg/DRaWNyf";
+		version = 1.0.0;
+		versionAr[] = {1,0,0,0};
+		versionStr = "v1.0.0";
+
+		// Addon requirements
+		requiredVersion = 2.00;
 		requiredAddons[] = {
 			"cba_settings",
 			"ace_arsenal",
@@ -13,11 +21,16 @@ class CfgPatches {
 			"ace_medical",
 			"A3_Modules_F"
 		};
-		author = "2nd Battalion, Nord Brigade";
-		authors[] = {
-			"D. Ford",
-			"Arend"
+
+		// Addon items
+		units[] = {
+			// CfgEdenModules
+			"BNB_ES_Barracks_Module"
 		};
+		weapons[] = {};
+		magazines[] = {};
+		ammo[] = {};
+		worlds[] = {};
 	};
 };
 

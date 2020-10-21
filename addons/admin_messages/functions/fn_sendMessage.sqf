@@ -31,13 +31,13 @@ if ([] call bnb_es_admin_messages_fnc_isAdminOrZeus) then {
 	};
 
 	// display sent message locally
-	[format["%1 %2",localize "STR_bnb_es_ADMIN_MESSAGES_TO",_lbText],_message] call bnb_es_admin_messages_fnc_displayMessage;
+	[format["%1 %2",localize "STR_BNB_ES_ADMIN_MESSAGES_TO",_lbText],_message] call bnb_es_admin_messages_fnc_displayMessage;
 
 	// send message to recipient
 	[profileName,getPlayerUID player,_message,_receiveCondition,_receiveConditionParams] remoteExec ["bnb_es_admin_messages_fnc_receiveMessage",0,false];
 } else {
 	// display sent message locally
-	[format["%1 %2",localize "STR_bnb_es_ADMIN_MESSAGES_TO","Admin"],_message] call bnb_es_admin_messages_fnc_displayMessage;
+	[format["%1 %2",localize "STR_BNB_ES_ADMIN_MESSAGES_TO","Admin"],_message] call bnb_es_admin_messages_fnc_displayMessage;
 
 	// send message to recipient
 	[profileName,getPlayerUID player,_message] remoteExec ["bnb_es_admin_messages_fnc_receiveMessage",0,false];

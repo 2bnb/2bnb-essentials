@@ -61,7 +61,7 @@ class bnb_es_admin_messages_sendBoxButtonBase: RscButtonMenu {
 	onLoad = "uiNamespace setVariable [""bnb_es_admin_messages_sendBoxButtonCtrl"",(_this select 0)]; _this call bnb_es_admin_messages_fnc_setSendButtonPosition";
 	onUnLoad = "uiNamespace setVariable [""bnb_es_admin_messages_sendBoxButtonCtrl"",nil]";
 
-	text = "$STR_bnb_es_ADMIN_MESSAGES_SENDBOXBUTTON";
+	text = "$STR_BNB_ES_ADMIN_MESSAGES_SENDBOXBUTTON";
 	action = "call bnb_es_admin_messages_fnc_sendMessage";
 
 	x = BNB_ES_ADMIN_MESSAGES_TITLE_X;

@@ -26,7 +26,7 @@ private _fnc_addEntry = {
 
 //LATEST CONVERSATIONS =========================================================
 if (!isNil "bnb_es_admin_messages_latestConvos" && {count bnb_es_admin_messages_latestConvos > 0}) then {
-	["STR_bnb_es_ADMIN_MESSAGES_LATESTCONVOS"] call _fnc_addHeadline;
+	["STR_BNB_ES_ADMIN_MESSAGES_LATESTCONVOS"] call _fnc_addHeadline;
 	{
 		_x call _fnc_addEntry;
 		false
@@ -36,9 +36,9 @@ if (!isNil "bnb_es_admin_messages_latestConvos" && {count bnb_es_admin_messages_
 
 
 //BY SIDE ======================================================================
-["STR_bnb_es_ADMIN_MESSAGES_BYCATEGORY"] call _fnc_addHeadline;
-[localize "STR_bnb_es_ADMIN_MESSAGES_EVERYONE",-2] call _fnc_addEntry;
-[localize "STR_bnb_es_ADMIN_MESSAGES_OTHERADMINS",-3] call _fnc_addEntry;
+["STR_BNB_ES_ADMIN_MESSAGES_BYCATEGORY"] call _fnc_addHeadline;
+[localize "STR_BNB_ES_ADMIN_MESSAGES_EVERYONE",-2] call _fnc_addEntry;
+[localize "STR_BNB_ES_ADMIN_MESSAGES_OTHERADMINS",-3] call _fnc_addEntry;
 ["BLUFOR",-4] call _fnc_addEntry;
 ["OPFOR",-5] call _fnc_addEntry;
 ["INDEPENDENT",-6] call _fnc_addEntry;
@@ -47,7 +47,7 @@ if (!isNil "bnb_es_admin_messages_latestConvos" && {count bnb_es_admin_messages_
 
 
 //LIST OF PLAYERS ==============================================================
-["STR_bnb_es_ADMIN_MESSAGES_BYPLAYER"] call _fnc_addHeadline;
+["STR_BNB_ES_ADMIN_MESSAGES_BYPLAYER"] call _fnc_addHeadline;
 private _playerData = [];
 {
 	_playerData pushBack [toUpper ([_x,true] call BIS_fnc_getName),getPlayerUID _x];

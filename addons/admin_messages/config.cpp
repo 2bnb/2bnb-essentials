@@ -1,16 +1,30 @@
 class CfgPatches {
 	class bnb_es_admin_messages {
-		author = "McDiod";
+		// Addon identity
 		name = "2BNB Essentials - Admin Messages";
-		requiredVersion = 1.0;
-		requiredAddons[] = {"A3_Ui_F"};
-		units[] = {};
-		weapons[] = {};
+		author = "McDiod";
 		authors[] = {
 			"McDiod",
-			"D. Ford",
+			"Ford",
 			"Arend"
 		};
+		url = "https://discord.gg/DRaWNyf";
+		version = 1.0.0;
+		versionAr[] = {1,0,0,0};
+		versionStr = "v1.0.0";
+
+		// Addon requirements
+		requiredVersion = 2.00;
+		requiredAddons[] = {
+			"A3_Ui_F"
+		};
+
+		// Addon items
+		units[] = {};
+		weapons[] = {};
+		magazines[] = {};
+		ammo[] = {};
+		worlds[] = {};
 	};
 };
 

@@ -6,7 +6,7 @@ params [["_info",""],["_message",""]];
 private _customChatTitleDisplay = uiNamespace getVariable ["bnb_es_admin_messages_rscCustomChat",displayNull];
 private _ctrlText = _customChatTitleDisplay displayCtrl BNB_ES_ADMIN_MESSAGES_IDC_CUSTOMCHATTEXT;
 
-_ctrlText ctrlSetStructuredText parseText format ["<t color='#E51919'>%1</t> %2",format [localize "STR_bnb_es_ADMIN_MESSAGES_CHANNEL",_info],_message];
+_ctrlText ctrlSetStructuredText parseText format ["<t color='#E51919'>%1</t> %2",format [localize "STR_BNB_ES_ADMIN_MESSAGES_CHANNEL",_info],_message];
 
 private _textHeight = ctrlTextHeight _ctrlText;
 /* private _textWidth = ctrlTextWidth _ctrlText; */
@@ -19,7 +19,7 @@ _ctrlText ctrlCommit 0;
 
 // add message to chat either way >> user can check chat history on map, if enabled
 bnb_es_admin_messages_channel radioChannelAdd [player];
-bnb_es_admin_messages_channel radioChannelSetCallsign format [localize "STR_bnb_es_ADMIN_MESSAGES_CHANNEL",_info];
+bnb_es_admin_messages_channel radioChannelSetCallsign format [localize "STR_BNB_ES_ADMIN_MESSAGES_CHANNEL",_info];
 
 player customChat [bnb_es_admin_messages_channel, _message];
 bnb_es_admin_messages_channel radioChannelRemove [player];

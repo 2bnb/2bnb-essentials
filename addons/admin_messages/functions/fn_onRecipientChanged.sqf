@@ -6,8 +6,8 @@ private _sendButton = uiNamespace getVariable ["bnb_es_admin_messages_sendBoxBut
 
 if (!(_data isEqualType 0) || {_data == -1}) then {
 	_sendButton ctrlEnable false;
-	_sendButton ctrlSetText (localize "STR_bnb_es_ADMIN_MESSAGES_SELECTVALIDRECIP");
+	_sendButton ctrlSetText (localize "STR_BNB_ES_ADMIN_MESSAGES_SELECTVALIDRECIP");
 } else {
 	_sendButton ctrlEnable true;
-	_sendButton ctrlSetText format [(localize "STR_bnb_es_ADMIN_MESSAGES_SENDTO"),_ctrl lbText _selID];
+	_sendButton ctrlSetText format [(localize "STR_BNB_ES_ADMIN_MESSAGES_SENDTO"),_ctrl lbText _selID];
 };
