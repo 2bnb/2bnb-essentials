@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/2bnb/2bnb-essentials/blob/master/2BNB_ESssentials_Github.png"
+<img src="https://github.com/2bnb/2bnb-essentials/blob/master/2BNB_Esssentials_Github.png"
      alt="2BNB Banner" /><br />
   <a href="https://github.com/2bnb/2bnb-essentials/wiki">
     <img src="https://img.shields.io/badge/2BNB%20Extras-Wiki-orange.svg?style=for-the-badge&logo=github"
