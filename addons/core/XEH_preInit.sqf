@@ -21,12 +21,12 @@
 
 			[_position, _objectUnderCursor] call bnb_es_core_fnc_addMusicRadio;
 		}] call Ares_fnc_RegisterCustomModule;
-	}, [], 0, {
+	}, [], 120, {
 		["KLPQ Music Player not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 	}] call CBA_fnc_waitUntilAndExecute;
 
 	["Zeus Modules loaded", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-}, [], 20, {
+}, [], 120, {
 	["Achilles is not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
