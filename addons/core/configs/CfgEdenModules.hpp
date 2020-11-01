@@ -83,6 +83,10 @@ class CfgVehicles {
 						name = "Independent";
 						value = "independent";
 					};
+					class Outlaw {
+						name = "Outlaw";
+						value = "outlaw";
+					};
 					class Mission {
 						name = "Mission";
 						value = "mission";

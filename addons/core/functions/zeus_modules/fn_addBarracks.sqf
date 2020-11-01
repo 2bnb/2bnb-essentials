@@ -30,6 +30,7 @@ private _availableFilters = [
 	"West",
 	"East",
 	"Independent",
+	"Outlaw",
 	"Mission"
 ];
 
