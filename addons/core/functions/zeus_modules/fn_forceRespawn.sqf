@@ -2,7 +2,7 @@
 Function: bnb_es_core_fnc_forceRespawn
 
 Description:
-	Forces all the dead people to respawn in 2 seconds, lasts 6 seconds.
+	Forces all the dead people to respawn immediately.
 	After that the respawn is once again set to default timer value.
 
 Parameters:
@@ -19,7 +19,7 @@ Author:
 	Arend
 ---------------------------------------------------------------------------- */
 {
-	setPlayerRespawnTime 1;
-	sleep 3;
+	setPlayerRespawnTime 0;
+	sleep 2;
 	setPlayerRespawnTime bnb_es_respawn_timer;
-} remoteExec ["bis_fnc_call", 0];
+} remoteExec ["BIS_fnc_call", 0];

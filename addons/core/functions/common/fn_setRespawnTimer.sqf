@@ -23,9 +23,9 @@ params [["_time", 0, [0]]];
 	[
 		"bnb_es_respawn_timer",
 		_time,
-		1
+		1 // Priority
 	],
-	"bnb_es_respawn_timer_event"
+	"bnb_es_respawn_timer_event" // Event ID, must be unique
 ] call CBA_fnc_globalEventJIP;
 
 [format["Respawn timer set to %1", [_time, "M:SS"] call CBA_fnc_formatElapsedTime]] call bnb_es_core_fnc_notifyZeus;

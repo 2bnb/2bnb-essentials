@@ -106,7 +106,6 @@ player addEventHandler ["Killed", {
 	params ["_player"];
 
 	private _curators = call bnb_es_core_fnc_getCurators;
-
 	if (_player in _curators) exitWith { // If zeus, instantly respawn
 		[] spawn {
 			setPlayerRespawnTime 0;
@@ -114,6 +113,8 @@ player addEventHandler ["Killed", {
 			setPlayerRespawnTime bnb_es_respawn_timer;
 		};
 	};
+
+	setPlayerRespawnTime bnb_es_respawn_timer;
 
 	[format["%1 just died!", name _player]] remoteExec ["bnb_es_core_fnc_notifyZeus", _curators];
 	_player setVariable ["bnb_es_diedAt", serverTime, true];
