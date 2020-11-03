@@ -45,7 +45,7 @@ class bnb_es_admin_messages_sendBoxBase: RscEdit {
 	sizeEx = "0.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
 	onLoad = "uiNamespace setVariable [""bnb_es_admin_messages_sendBoxCtrl"",(_this select 0)]";
-	onUnLoad = "uiNamespace setVariable [""bnb_es_admin_messages_sendBoxCtrl"",nil];[false] call bnb_es_admin_messages_fnc_handleEnterKey";
+	onUnLoad = "uiNamespace setVariable [""bnb_es_admin_messages_sendBoxCtrl"",nil]";
 
 	onKeyDown = "if ((_this select 1) isEqualTo 28 && !(_this select 2) && !(_this select 3) && !(_this select 4)) then {call bnb_es_admin_messages_fnc_sendMessage;};";
 
