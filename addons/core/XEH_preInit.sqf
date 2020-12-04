@@ -30,32 +30,32 @@
 	// ["Achilles is not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 // }] call CBA_fnc_waitUntilAndExecute;
 
-
-[format["Start testing at %1 seconds after server start", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+bnb_es_startedTestingModules = serverTime;
+[format["Start testing at %1 seconds after server start", bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 // Testing
 [{isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")},{
-	[format["Achilles loaded successfully at %1 seconds after server start", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	[format["Achilles loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 
 	[{isClass (configFile >> "CfgPatches" >> "klpq_musicPlayer")},{
-		[format["KLPQ Music Player loaded successfully at %1 seconds after server start", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+		[format["KLPQ Music Player loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 	}, [], 120, {
-		[format["KLPQ Music Player not loaded in time! Server time: %1", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+		[format["KLPQ Music Player not loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 	}] call CBA_fnc_waitUntilAndExecute;
 }, [], 120, {
-	[format["Achilles not loaded in time! Server time: %1", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	[format["Achilles not loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
 // Testing without time limit
 [{isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")},{
-	[format["Achilles finally loaded successfully at %1 seconds after server start", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	[format["Achilles finally loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 
 	[{isClass (configFile >> "CfgPatches" >> "klpq_musicPlayer")},{
-		[format["KLPQ Music Player finally loaded successfully at %1 seconds after server start", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+		[format["KLPQ Music Player finally loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 	}, [], -1, {
-		[format["KLPQ Music Player never loaded in time! Server time: %1", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+		[format["KLPQ Music Player never loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 	}] call CBA_fnc_waitUntilAndExecute;
 }, [], -1, {
-	[format["Achilles never loaded in time! Server time: %1", serverTime], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	[format["Achilles never loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
 
