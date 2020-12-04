@@ -19,7 +19,8 @@ class CfgPatches {
 			"ace_arsenal",
 			"ace_explosives",
 			"ace_medical",
-			"A3_Modules_F"
+			"A3_Modules_F",
+			"achilles_modules_f_achilles"
 		};
 
 		// Addon items
