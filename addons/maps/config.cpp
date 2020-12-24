@@ -14,18 +14,14 @@ class CfgPatches {
 
 		// Addon requirements
 		requiredVersion = 2.00;
-		requiredAddons[] = {
-			"vt7"
-		};
+		requiredAddons[] = {};
 
 		// Addon items
 		units[] = {};
 		weapons[] = {};
 		magazines[] = {};
 		ammo[] = {};
-		worlds[] = {
-			"vt7_china"
-		};
+		worlds[] = {};
 	};
 };
 
@@ -36,5 +32,3 @@ class CfgWorlds {
 	// See: https://github.com/2bnb/2bnb-extras/wiki/Renaming-Map-Locations
 	#include "altis.hpp"
 };
-
-#include "vt7_china.hpp"
