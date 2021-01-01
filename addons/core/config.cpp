@@ -19,8 +19,7 @@ class CfgPatches {
 			"ace_arsenal",
 			"ace_explosives",
 			"ace_medical",
-			"A3_Modules_F",
-			"achilles_modules_f_achilles"
+			"A3_Modules_F"
 		};
 
 		// Addon items
@@ -97,4 +96,5 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgMedicalEquipment.hpp";
 #include "configs\CfgRadioEquipment.hpp";
 #include "configs\CfgUnitTrainerTools.hpp";
+#include "configs\CfgZenMenu.hpp";
 #include "configs\CfgZeusActions.hpp";

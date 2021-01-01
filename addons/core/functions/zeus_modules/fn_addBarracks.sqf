@@ -18,99 +18,104 @@ Examples:
 Author:
 	Arend
 ---------------------------------------------------------------------------- */
-params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull, []]]];
 
-private _objects = [_objectUnderCursor];
+private _objects = _objectUnderCursor;
+if (_objects isEqualType objNull) then {
+	_objects = [_objects];
+};
 
 
 // Show Filter Dialog
 private _availableFilters = [
-	"Full",
-	"Standard",
-	"West",
-	"East",
-	"Independent",
-	"Outlaw",
+	"",
+	"standard",
+	"west",
+	"east",
+	"independent",
+	"outlaw",
+	"mission"
+];
+
+private _availableFilterNames = [
+	["Full", "Unlimited Arsenal!"],
+	["Standard", "Our usual 2BNB equipment"],
+	["West", "Western equipment"],
+	["East", "Russian equipment, including SSO"],
+	["Independent", "LDF, AAF and UN equipment, as well as weaponry from countries such as Poland, the Czech Republic, Romania, etc."],
+	["Outlaw", "PMC, Insurgents, Rebels, etc."],
 	"Mission"
 ];
 
 private _arsenalObjects = [bnb_es_arsenal_objects, true] call bnb_es_core_fnc_strToArray;
 
-private _dialogOptions = [["Filter", _availableFilters, 0]];
-private _dialogControls = [["_filter", 0]];
+private _dialogOptions = [["COMBO", "Filter", [_availableFilters, _availableFilterNames]]];
+private _dialogParameters = [["_filter", ""]];
 
 if (isNull (_objects select 0)) then {
 	_dialogOptions = [[
+		"COMBO",
 		"Select object to spawn",
-		[""] + (_arsenalObjects apply {getText (configfile >> "CfgVehicles" >> _x >> "displayName")})
+		[
+			_arsenalObjects,
+			(_arsenalObjects apply {getText (configfile >> "CfgVehicles" >> _x >> "displayName")})
+		]
 	]] + _dialogOptions;
 
-	_dialogControls = [["_arsenalObject", 0]] + _dialogControls;
+	_dialogParameters = [["_arsenalObject", ""]] + _dialogParameters;
 };
 
 
 // Add Full Heal?
-_dialogOptions = _dialogOptions + [["Add Full Heal?", ["Yes", "No"]]];
-_dialogControls = _dialogControls + [["_hasFullHeal", 0]];
+_dialogOptions = _dialogOptions + [["CHECKBOX", "Add Full Heal?", false]];
+_dialogParameters = _dialogParameters + [["_hasFullHeal", false]];
 
 
 // Add Spectator?
-_dialogOptions = _dialogOptions + [["Add Spectator?", ["Yes", "No"]]];
-_dialogControls = _dialogControls + [["_hasSpectator", 0]];
+_dialogOptions = _dialogOptions + [["CHECKBOX", "Add Spectator?", false]];
+_dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 
-private _dialogResult = ["Add Filtered Arsenal", _dialogOptions] call Ares_fnc_showChooseDialog;
+[format["Dialog Settings: %1, Dialog Controls: %2, Obj: %3", _dialogOptions, _dialogParameters, _objects], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
+["Add Filtered Arsenal", _dialogOptions, {
+	(_this select 1) params ["_objects", "_position", "_dialogParameters"];
+	(_this select 0) params _dialogParameters;
 
-// If the dialog was closed.
-if (_dialogResult isEqualTo []) exitWith {};
-
-// Get the selected data
-_dialogResult params _dialogControls;
-
-
-// Check if module placed on an object
-if (isNull (_objects select 0)) then {
-	if (_arsenalObject == 0) then {
-		// No object selected to be spawned
-		_objects = [localize "STR_AMAE_OBJECTS"] call Achilles_fnc_SelectUnits;
-		[format["No objects selected: %1", _objects], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
-		if (_objects isEqualTo [] || !(_objects isEqualType [])) exitWith {[localize "STR_AMAE_NO_OBJECT_SELECTED", "error"] call bnb_es_core_fnc_notifyZeus};
-
-	} else {
+	// Check if module placed on an object
+	if (isNull (_objects select 0)) then {
 		// Object selected to be spawned
-		private _type = _arsenalObjects select (_arsenalObject - 1);
-		_object = _type createVehicle _position;
-		[[_object]] call Ares_fnc_AddUnitsToCurator;
+		private _object = _arsenalObject createVehicle _position;
+		[format["Object: %1, Chosen Object: %2", _object, _arsenalObject], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
+
+		["zen_common_addObjects", [[_object], _curator]] call CBA_fnc_serverEvent;
 		_objects = [_object];
 	};
-};
-
-if (_objects isEqualTo []) exitWith {};
 
 
-// Give server the object, so that everything in future can be applied to the object locally
-if (!isServer) then {
-	{
-		if (_x setOwner 2) then {
-			[format["Changed ownership of %1 to %2", _x, owner _x], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
-		} else {
-			[format["Could not change ownership of %1 to %2", _x, owner _x], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
-		};
-	} foreach _objects;
-};
+	// Give server the object, so that everything in future can be applied to the object locally
+	if (!isServer) then {
+		{
+			if (_x setOwner 2) then {
+				[format["Changed ownership of %1 to %2", _x, owner _x], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
+			} else {
+				[format["Could not change ownership of %1 to %2", _x, owner _x], "core\functions\zeus_modules\fn_addBarracks.sqf"] call bnb_es_core_fnc_log;
+			};
+		} foreach _objects;
+	};
 
 
-// Add Arsenal - Remotely, since only the server has 2BNB Framework loaded
-[_availableFilters select _filter, _objects] remoteExec ["bnb_f_core_fnc_arsenal", 2];
+	// Add Arsenal - Remotely, since only the server has 2BNB Framework loaded
+	[_filter, _objects] remoteExec ["bnb_f_core_fnc_arsenal", 2];
 
-if (_hasFullHeal isEqualTo 0) then {
-	[_objects] remoteExec ["bnb_f_core_fnc_fullHeal", 2];
-};
+	if (_hasFullHeal) then {
+		[_objects] remoteExec ["bnb_f_core_fnc_fullHeal", 2];
+	};
 
-if (_hasSpectator isEqualTo 0) then {
-	{
-		[[_x], {[_this select 0] call bnb_es_core_fnc_addSpectator;}] remoteExec ["BIS_fnc_call", 0, _x];
-	} foreach _objects;
-};
+	if (_hasSpectator) then {
+		{
+			[[_x], {[_this select 0] call bnb_es_core_fnc_addSpectator;}] remoteExec ["BIS_fnc_call", 0, _x];
+		} foreach _objects;
+	};
 
-// Show Message
-["Barracks functions added!"] call bnb_es_core_fnc_notifyZeus;
+	// Show Message
+	["Barracks functions added!"] call bnb_es_core_fnc_notifyZeus;
+}, {}, [_objects, _position, _dialogParameters]] call zen_dialog_fnc_create;
