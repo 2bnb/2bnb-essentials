@@ -205,6 +205,13 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\2bnb-medic-patch.paa";
 	};
 
+	class BNB_ES_MedicPatch2
+	{
+		displayName="2BNB Alternate Medic Patch";
+		author="Seth";
+		texture="x\bnb_es\custom_patches\img\2bnb-medic-patch2.paa";
+	};
+
 	class BNB_ES_ArendsBrother
 	{
 		displayName="Arend's Brother";
