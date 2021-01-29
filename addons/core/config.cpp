@@ -38,12 +38,14 @@ class CfgFunctions {
 	class bnb_es_core {
 		class common {
 			file = "\x\bnb_es\core\functions\common";
+			class addDeployActions {};
 			class addFullHeal {};
 			class addSpectator {};
 			class changeSpeakVolume {};
 			class connectToServer {};
 			class getCurators {};
 			class getDeadPlayers {};
+			class getDeployAnimations {};
 			class isCurator {};
 			class listDeadPlayers {};
 			class notifyZeus {};
@@ -96,5 +98,6 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgMedicalEquipment.hpp";
 #include "configs\CfgRadioEquipment.hpp";
 #include "configs\CfgUnitTrainerTools.hpp";
+#include "configs\CfgVehicleDeploy.hpp";
 #include "configs\CfgZenMenu.hpp";
 #include "configs\CfgZeusActions.hpp";
