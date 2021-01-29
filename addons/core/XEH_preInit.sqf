@@ -67,6 +67,10 @@ private _prettyName = "";
 		{},
 		true
 	] call CBA_Settings_fnc_init;
-} forEach ("true" configClasses (configfile >> "CfgWorldList"));
+} forEach ([
+	("true" configClasses (configFile >> "CfgWorldList")),
+	[],
+	{getText (configFile >> "CfgWorlds" >> (configName _x) >> "description")}
+] call BIS_fnc_sortBy);
 
 CHVD_allowNoGrass = false;
