@@ -267,4 +267,18 @@ class CfgUnitInsignia
 		author="Sindre";
 		texture="x\bnb_es\custom_patches\img\norwegian-forces.paa";
 	};
+
+	class BNB_ES_Scotland
+	{
+		displayName="Scotland";
+		author="Arend";
+		texture="x\bnb_es\custom_patches\img\scotland.paa";
+	};
+
+	class BNB_ES_Wales
+	{
+		displayName="Wales";
+		author="Arend";
+		texture="x\bnb_es\custom_patches\img\wales.paa";
+	};
 };
