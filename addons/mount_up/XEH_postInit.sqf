@@ -1,0 +1,6 @@
+#include "compats\3cb.sqf"
+#include "compats\a3.sqf"
+#include "compats\cup.sqf"
+#include "compats\h60.sqf"
+#include "compats\rhsusaf.sqf"
+#include "compats\rhsafrf.sqf"
