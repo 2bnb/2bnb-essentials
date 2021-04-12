@@ -16,7 +16,7 @@ class child : parent { \
 				displayName = "Deploy"; \
 				distance = 4; \
 				icon = "\A3\ui_f\data\GUI\Rsc\RscDisplayGarage\animationSources_ca.paa"; \
-				condition = "!(([_target] call bnb_es_core_fnc_getDeployAnimations) isEqualTo [])"; \
+				condition = "!(([_target] call bnb_es_core_fnc_getDeployAnimations) isEqualTo []) && simulationEnabled _target && alive _target"; \
 				statement = ""; \
 				insertChildren = "_this call bnb_es_core_fnc_addDeployActions;"; \
 				exceptions[] = {"isNotEscorting", "isNotDragging", "isNotCarrying"}; \
