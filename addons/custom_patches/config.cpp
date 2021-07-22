@@ -17,7 +17,7 @@ class CfgPatches {
 			"Krieg",
 			"Badger"
 		};
-		url = "https://discord.gg/DRaWNyf";
+		url = "https://discord.gg/rUUsCShkzJ";
 		version = 1.0.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
