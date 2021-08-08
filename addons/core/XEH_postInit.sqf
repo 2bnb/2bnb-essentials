@@ -73,7 +73,7 @@
 	};
 };
 
-// [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
+[{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
 	["2BNB Modules", "Add Barracks Functions",
 	{
 		// Array of position AGLS, ObjNull or the object under the module as it's placed
@@ -87,50 +87,24 @@
 		[] call bnb_es_core_fnc_forceRespawn;
 	}] call zen_custom_modules_fnc_register;
 
-
-	// [{isClass (configFile >> "CfgPatches" >> "klpq_musicRadio")},{
-		["2BNB Modules", "Add Music Radio",
-		{
-			// Array of position AGLS, ObjNull or the object under the module as it's placed
-			params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-
-			[_position, _objectUnderCursor] call bnb_es_core_fnc_addMusicRadio;
-		}] call zen_custom_modules_fnc_register;
-	// }, [], 120, {
-		// ["KLPQ Music Player not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-	// }] call CBA_fnc_waitUntilAndExecute;
-
-	["Zeus Modules loaded", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-// }, [], 120, {
-	// ["ZEN is not loaded!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-// }] call CBA_fnc_waitUntilAndExecute;
-
-bnb_es_startedTestingModules = serverTime;
-[format["Start testing at %1 seconds after server start", bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-// Testing
-[{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	[format["ZEN loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	["ZEN loaded successfully", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }, [], 120, {
-	[format["ZEN not loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	["ZEN not loaded in time!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
+
 
 [{isClass (configFile >> "CfgPatches" >> "klpq_musicRadio") && isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	[format["KLPQ Music Player loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	["2BNB Modules", "Add Music Radio",
+	{
+		// Array of position AGLS, ObjNull or the object under the module as it's placed
+		params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+		[_position, _objectUnderCursor] call bnb_es_core_fnc_addMusicRadio;
+	}] call zen_custom_modules_fnc_register;
+
+	["KLPQ Music Player loaded successfully", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }, [], 120, {
-	[format["KLPQ Music Player not loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-}] call CBA_fnc_waitUntilAndExecute;
-
-// Testing without time limit
-[{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	[format["ZEN finally loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-}, [], -1, {
-	[format["ZEN never loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-}] call CBA_fnc_waitUntilAndExecute;
-
-[{isClass (configFile >> "CfgPatches" >> "klpq_musicRadio") && isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
-	[format["KLPQ Music Player finally loaded successfully at %1 seconds since testing started", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
-}, [], -1, {
-	[format["KLPQ Music Player never loaded in time! Testing time elapsed: %1", serverTime - bnb_es_startedTestingModules], "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
+	["KLPQ Music Player not loaded in time!", "core\XEH_preInit.sqf"] call bnb_es_core_fnc_log;
 }] call CBA_fnc_waitUntilAndExecute;
 
 // Export the mission setting into the CBA Setting on mission start
