@@ -19,7 +19,14 @@ class CfgPatches {
 			"ace_arsenal",
 			"ace_explosives",
 			"ace_medical",
-			"A3_Modules_F"
+			"A3_Modules_F",
+			"bwa3_uniforms",
+			"bwa3_vests",
+			"bwa3_headgear",
+			"bwa3_handgrenades",
+			"bwa3_units",
+			"bwa3_attachments",
+			"bwa3_optics"
 		};
 
 		// Addon items
