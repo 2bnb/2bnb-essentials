@@ -15,7 +15,9 @@ class CfgPatches {
 			"Carmichael",
 			"Sindre",
 			"Krieg",
-			"Badger"
+			"Badger",
+			"Nikki",
+			"SeeOne"
 		};
 		url = "https://discord.gg/rUUsCShkzJ";
 		version = 1.0.0;
@@ -103,15 +105,22 @@ class CfgUnitInsignia
 	class BNB_ES_2BNB
 	{
 		displayName="2BNB";
-		author="Ford";
+		author="SeeOne";
 		texture="x\bnb_es\custom_patches\img\2bnb-logo.paa";
 	};
 
-	class BNB_ES_2BNBAlt
+	class BNB_ES_2BNBOld
 	{
-		displayName="2BNB Alternate";
+		displayName="2BNB Old";
+		author="Ford";
+		texture="x\bnb_es\custom_patches\img\2bnb-logo-old.paa";
+	};
+
+	class BNB_ES_2BNBAltOld
+	{
+		displayName="2BNB Alternate Old";
 		author="Arend";
-		texture="x\bnb_es\custom_patches\img\2bnb-patch.paa";
+		texture="x\bnb_es\custom_patches\img\2bnb-patch-old.paa";
 	};
 
 	class BNB_ES_Putin
@@ -280,5 +289,26 @@ class CfgUnitInsignia
 		displayName="Wales";
 		author="Arend";
 		texture="x\bnb_es\custom_patches\img\wales.paa";
+	};
+
+	class BNB_ES_PrideFlagGay
+	{
+		displayName="Pride Flag - Gay";
+		author="Nikki";
+		texture="x\bnb_es\custom_patches\img\pride-flag-gay.paa";
+	};
+
+	class BNB_ES_PrideFlagNew
+	{
+		displayName="Pride Flag - New";
+		author="Nikki";
+		texture="x\bnb_es\custom_patches\img\pride-flag-new.paa";
+	};
+
+	class BNB_ES_PrideFlagTransgender
+	{
+		displayName="Pride Flag - Transgender";
+		author="Nikki";
+		texture="x\bnb_es\custom_patches\img\pride-flag-transgender.paa";
 	};
 };
