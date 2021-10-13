@@ -88,16 +88,17 @@ class Extended_PostInit_EventHandlers {
 };
 
 // Config features/fixes
-#include "configs\CfgArsenalStats.hpp";
-#include "configs\CfgBarrelSwaps.hpp";
-#include "configs\CfgDirectConnect.hpp";
-#include "configs\CfgEdenModules.hpp";
-#include "configs\CfgEnableDebug.hpp";
-#include "configs\CfgExplosives.hpp";
-#include "configs\CfgLadderTweak.hpp";
-#include "configs\CfgMedicalEquipment.hpp";
-#include "configs\CfgRadioEquipment.hpp";
-#include "configs\CfgUnitTrainerTools.hpp";
-#include "configs\CfgVehicleDeploy.hpp";
-#include "configs\CfgZenMenu.hpp";
-#include "configs\CfgZeusActions.hpp";
+#include "configs\CfgArsenalStats.hpp"
+#include "configs\CfgBarrelSwaps.hpp"
+#include "configs\CfgDirectConnect.hpp"
+#include "configs\CfgEdenModules.hpp"
+#include "configs\CfgEnableDebug.hpp"
+#include "configs\CfgExplosives.hpp"
+#include "configs\CfgHearingProtection.hpp"
+#include "configs\CfgLadderTweak.hpp"
+#include "configs\CfgMedicalEquipment.hpp"
+#include "configs\CfgRadioEquipment.hpp"
+#include "configs\CfgUnitTrainerTools.hpp"
+#include "configs\CfgVehicleDeploy.hpp"
+#include "configs\CfgZenMenu.hpp"
+#include "configs\CfgZeusActions.hpp"
