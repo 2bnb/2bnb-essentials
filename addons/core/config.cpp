@@ -102,3 +102,4 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgVehicleDeploy.hpp"
 #include "configs\CfgZenMenu.hpp"
 #include "configs\CfgZeusActions.hpp"
+#include "configs\CfgEdenLoadouts.hpp"
