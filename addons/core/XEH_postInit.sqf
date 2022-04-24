@@ -2,21 +2,34 @@
 	// Suspend the whole damn thing until the required CBA Settings are available
 	waitUntil {
 		sleep 0.5;
-		!(isNil "cba_settings_ready")
+		!(isNil "cba_settings_ready");
 	};
 
-	{ 
-	_role = _x getVariable "LoadoutRole"; 
-	if (_x getVariable "IsLoadout" == true) then 
-	{ 
-	[_role, getUnitLoadout _x] call ace_arsenal_fnc_addDefaultLoadout; 
-	deleteVehicle _x; 
-	}; 
-	} forEach allUnits select {!(isNil(_x getVariable "isLoadout"))};
 
-
-
-	
+	BNB_LoadoutUnits = [];
+	publicVariable "BNB_LoadoutUnits";
+	if (isServer) then
+	{
+		{
+			if (_x getVariable "IsLoadout" == true) then 
+			{
+				BNB_LoadoutUnits pushBack _x;
+				publicVariable "BNB_LoadoutUnits";
+				_x setPos [0,0,0];
+				hideObjectGlobal _x;
+				_x disableAI "all";
+				_x enableSimulationGlobal false;
+			};
+		} forEach allUnits; //Difficult to filter without causing the TFAR error - shouldn't matter too much for now as only happens once at start and Zeuses usually spawn AI instead of having it preplaced in mission, sort out eventually.
+		BNB_LoadoutUnits joinSilent createGroup sideLogic;
+		{
+		_x removeCuratorEditableObjects [BNB_LoadoutUnits, false];
+		} forEach allCurators;
+	};
+	{
+			_role = _x getVariable "LoadoutRole";
+			[_role, getUnitLoadout _x] remoteExec ["ace_arsenal_fnc_addDefaultLoadout", 0, true];
+	} forEach BNB_LoadoutUnits; 
 };
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
