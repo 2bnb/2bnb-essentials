@@ -9,7 +9,7 @@ Author:
 ---------------------------------------------------------------------------- */
 class CfgMainMenuSpotlight {
 	class bnb_es_miniOps_server {
-		text = "TF15 Mini-ops Server";
+		text = "Mini-ops Server";
 		textIsQuote = 0;
 		picture = "\x\bnb_es\core\TF15-tile.paa";
 		video = "\x\bnb_es\core\2bnb-tile.ogv";
@@ -19,7 +19,7 @@ class CfgMainMenuSpotlight {
 	};
 
 	class bnb_es_public_server {
-		text = "TF15 2nd Server";
+		text = "2nd Server";
 		textIsQuote = 0;
 		picture = "\x\bnb_es\core\TF15-tile.paa";
 		video = "\x\bnb_es\core\2bnb-tile.ogv";
@@ -29,7 +29,7 @@ class CfgMainMenuSpotlight {
 	};
 
 	class bnb_es_operations_server {
-		text = "TF15 Server";
+		text = "Main Server";
 		textIsQuote = 0;
 		picture = "\x\bnb_es\core\TF15-tile.paa";
 		video = "\x\bnb_es\core\2bnb-tile.ogv";
