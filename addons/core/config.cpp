@@ -51,6 +51,7 @@ class CfgFunctions {
 			class notifyZeus {};
 			class openTimerUI {};
 			class setRespawnTimer {};
+			class setDefaultLoadouts {};
 		};
 
 		class zeus_modules {
