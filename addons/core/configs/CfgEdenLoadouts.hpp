@@ -15,21 +15,21 @@ class Cfg3DEN
 						displayName = "Default Loadout?";
 						tooltip = "Use this unit as a default loadout for the mission";
 						property = "BNB_3den_Loadout";
-						control = "Checkbox";
+						control = "CheckboxState";
 						expression = "if (_value == true) then {_this setVariable ['IsLoadout',true, true];}";
 						defaultValue = "false";
-						condition = "objectControllable"; 
+						condition = "objectControllable";
 					};
 					class BNB_ES_LoadoutRole
 					{
 						displayName = "Name:";
-						tooltip = "Name of the loadout in the Arsenal";
+						tooltip = "Name of the loadout in the Arsenal; Accepts any string, including nothing. Duplicates will overwrite.";
 						property = "BNB_3den_LoadoutName";
 						control = "Edit";
 						expression = "_this setVariable ['LoadoutRole',_value, true];";
 						defaultValue = "''";
 						typeName = "STRING";
-						condition = "objectControllable"; 
+						condition = "objectControllable";
 					};
 				};
 			};
