@@ -5,21 +5,17 @@
 		!(isNil "cba_settings_ready")
 	};
 
-
-	BNB_MissionLoadouts = [];
-	if (isServer) then
-	{
+	if (isServer) then {
+		_LoadoutUnits = allUnits select {_x getVariable ["IsLoadout", false]};
+		BNB_MissionLoadouts = [];
 		{
-			if (_x getVariable "IsLoadout" == true) then 
-			{
 				_role = _x getVariable "LoadoutRole";
 				BNB_MissionLoadouts pushBack [_role, getUnitLoadout _x];
 				deleteVehicle _x;
-			};
-		} forEach allUnits; //Difficult to filter without causing the TFAR error - shouldn't matter too much for now as only happens once at start and Zeuses usually spawn AI instead of having it preplaced in mission, sort out eventually.
+		} forEach _LoadoutUnits;
 		publicVariable "BNB_MissionLoadouts";
+		[BNB_MissionLoadouts] remoteExec ["bnb_es_core_fnc_setDefaultLoadouts", 0, true];
 	};
-	[BNB_MissionLoadouts] remoteExec ["bnb_es_core_fnc_setDefaultLoadouts", 0, true];
 };
 
 [{isClass (configFile >> "CfgPatches" >> "zen_custom_modules")},{
