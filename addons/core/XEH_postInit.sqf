@@ -9,9 +9,9 @@
 		_LoadoutUnits = allUnits select {_x getVariable ["IsLoadout", false]};
 		BNB_MissionLoadouts = [];
 		{
-				_role = _x getVariable "LoadoutRole";
-				BNB_MissionLoadouts pushBack [_role, getUnitLoadout _x];
-				deleteVehicle _x;
+			_role = _x getVariable "LoadoutRole";
+			BNB_MissionLoadouts pushBack [_role, getUnitLoadout _x];
+			deleteVehicle _x;
 		} forEach _LoadoutUnits;
 		publicVariable "BNB_MissionLoadouts";
 		[BNB_MissionLoadouts] remoteExec ["bnb_es_core_fnc_setDefaultLoadouts", 0, true];
