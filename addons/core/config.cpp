@@ -43,6 +43,8 @@ class CfgFunctions {
 			class addSpectator {};
 			class changeSpeakVolume {};
 			class connectToServer {};
+			class edenLoadSettings {};
+			class edenCreateAssets {};
 			class getCurators {};
 			class getDeadPlayers {};
 			class getDeployAnimations {};
@@ -104,3 +106,4 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgZenMenu.hpp"
 #include "configs\CfgZeusActions.hpp"
 #include "configs\CfgEdenLoadouts.hpp"
+#include "configs\CfgEdenTools.hpp"
