@@ -43,29 +43,88 @@ class CfgGroups
 				{
 					faction = "BLU_F";
 					side = 1;
-					class ZeusOne
+					class Unit0
 					{
-						position[] = {0,0.1,0};
-						vehicle = "SAM_Soldier_M90_TL";
-						name = "zeusOne";
-						ControlMP = "true";
-						description = "1. Zeus@Command";
-						statement = "_this set3DENAttribute ['ControlMP', true]"; //Nope
+						position[] = {0,0,0};
+						vehicle = "SAM_Soldier_SF_M90_ASSTL";
 					};
-					class ZeusTwo
+					class Unit1
 					{
-						position[] = {0,0.1,0.1};
-						vehicle = "SAM_Soldier_M90_TL";
-						name="zeustwo";
-						description="2. A.Zeus";
-						isPlayable=1;
-						onLoad = "_this set3DENAttribute ['ControlMP', true]"; //Double Nope
-
+						position[] = {1,0,0};
+						vehicle = "SAM_Soldier_SF_M90_ASSTL";
 					};
 				};
 				class section
 				{
+					faction = "BLU_F";
+					side = 1;
+					class Unit0
+					{
+						position[] = {0,0,0};
+						vehicle = "SAM_Soldier_SF_M90_TL";
+					};
+					class Unit1
+					{
+						position[] = {0,-3,0};
+						vehicle = "SAM_Soldier_SF_M90_ASSTL";
+					};
+					class Unit2
+					{
+						position[] = {0,-6,0};
+						vehicle = "SAM_Soldier_SF_M90_CM";
+					};
+					class Unit3
+					{
+						position[] = {0,-9,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
+					class Unit4
+					{
+						position[] = {5,0,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
+					class Unit5
+					{
+						position[] = {5,-3,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
+					class Unit6
+					{
+						position[] = {5,-6,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
+					class Unit7
+					{
+						position[] = {5,-9,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
 
+				};
+				class command
+
+				{
+					faction = "BLU_F";
+					side = 1;
+					class Unit0
+					{
+						position[] = {0,0,0};
+						vehicle = "SAM_Soldier_SF_M90_TL";
+					};
+					class Unit1
+					{
+						position[] = {0,-3,0};
+						vehicle = "SAM_Soldier_SF_M90_ASSTL";
+					};
+					class Unit2
+					{
+						position[] = {0,-6,0};
+						vehicle = "SAM_Soldier_SF_M90_CM";
+					};
+					class Unit3
+					{
+						position[] = {0,-9,0};
+						vehicle = "SAM_Soldier_SF_M90_RL";
+					};
 				};
 			};
 		};

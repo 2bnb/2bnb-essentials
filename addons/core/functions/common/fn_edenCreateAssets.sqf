@@ -16,40 +16,44 @@ Examples:
 Author:
 	Met
 ---------------------------------------------------------------------------- */
+_callsign = "Thor";
+_centralPos = screenToWorld [0, 0];
+
+
 _entities =
 [
 	[
-		["Marker", "mil_circle", screenToWorld [0.1, 0]],
+		["Marker", "mil_circle", _centralPos vectorAdd [10, 0]],
 		["markerName", "respawn"],
 		["text", "respawn"]
 	],
 	[
-		["Logic", "ModuleCurator_F", screenToWorld [-0.3, 0]],
+		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, 0]],
 		["ModuleCurator_F_Owner", "zeusOne"],
 		["ModuleCurator_F_Name", "Active Zeus"]
 	],
 	[
-		["Logic", "ModuleCurator_F", screenToWorld [-0.3, -0.1]],
-		["ModuleCurator_F_Owner", "ZeusTwo"],
+		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, -1]],
+		["ModuleCurator_F_Owner", "zeusTwo"],
 		["ModuleCurator_F_Name", "Assistant Zeus"]
 	],
 	[
-		["Logic", "ModuleCurator_F", screenToWorld [-0.3, -0.2]],
+		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, -2]],
 		["ModuleCurator_F_Owner", "#adminLogged"],
 		["ModuleCurator_F_Name", "Admin"]
 	],
 	[
-		["Logic", "HeadlessClient_F", screenToWorld [-0.4, 0]],
+		["Logic", "HeadlessClient_F", _centralPos vectorAdd [-2, 0]],
 		["ControlMp", true],
 		["name", "HC1"]
 	],
 	[
-		["Logic", "HeadlessClient_F", screenToWorld [-0.4, -0.1]],
+		["Logic", "HeadlessClient_F", _centralPos vectorAdd [-2, -1]],
 		["ControlMp", true],
 		["name", "HC2"]
 	],
 	[
-		["Logic", "HeadlessClient_F", screenToWorld [-0.4, -0.2]],
+		["Logic", "HeadlessClient_F", _centralPos vectorAdd [-2, -2]],
 		["ControlMp", true],
 		["name", "HC3"]
 	]
@@ -62,8 +66,25 @@ _entities =
 	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo;
 } forEach _entities;
 
-for "_i" from 0 to 3 do
-{
-    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "sfp_swe_2015" >> "Infantry" >> "BSWE15_InfSquad",
-        screenToWorld [0.5, 0.5] vectorAdd [_i, 0, 0]];
-};  //placeholder for custom squads
+create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "command", _centralPos vectorAdd [0, 0]];
+set3DENAttributes [[get3DENSelected "Group","groupID", "Command"] ,[get3DENSelected "Object","ControlMP",true]];
+_group = get3DENselected "Object" select 0;
+leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-Actual", _callsign ]];
+set3DENSelected [];
+
+for "_i" from 1 to 3 do {
+    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_i, 0, 0]];
+	set3DENAttributes [[get3DENSelected "Group","groupID", format ["1-%1 Sec", _i]] ,[get3DENSelected "Object","ControlMP",true]];
+	_group = get3DENselected "Object" select 0;
+	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign , _i]];
+	set3DENSelected [];
+};
+
+create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "zeus", _centralPos vectorAdd [1, 2]];
+set3DENAttributes [[get3DENSelected "Group","groupID", "Zeus"] ,[get3DENSelected "Object","ControlMP",true]];
+_asZeus = get3DENselected "Object" select 1;
+leader _asZeus set3DENAttribute ["description", "1. Zeus@Command"];
+leader _asZeus set3DENAttribute ["name", "zeusOne"];
+_asZeus set3DENAttribute ["description", "2. A.Zeus"];
+_asZeus set3DENAttribute ["name", "zeusTwo"];
+set3DENSelected [];
