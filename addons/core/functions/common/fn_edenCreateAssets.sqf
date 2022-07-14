@@ -67,7 +67,7 @@ _arsenalObjects =
 	],
 	[
 		["Logic", "BNB_ES_Barracks_Module", _centralPos vectorAdd [-4, 7]],
-		["ArsenalFilter", "standard"]
+		["BNB_ES_Barracks_Module_ArsenalFilter", "Standard"]
 	],
 	[
 		["Object", "B_supplyCrate_F", _centralPos vectorAdd [-5, 6]],
