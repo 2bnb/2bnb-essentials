@@ -6,18 +6,27 @@ Description:
 
 Parameters:
 	0: _callsign - The platoon callsign that all sections will use <String>
-	1: _numberOfSections - The number of sections to spawn <>
+	1: _zeusCallsign - The callsign that HQ will use <String>
+	2: _numberOfSections - The number of sections to spawn <Number>
 
 Returns:
 	Nothing.
 
 Examples:
-	[] call bnb_es_core_fnc_edenCreateAssets;
+	["Odin", "Valhalla", 3] call bnb_es_core_fnc_edenCreateAssets;
 
 Author:
 	Met
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Thor"], ["_numberOfSections", 3]];
+params [["_callsign", "Odin"],["_zeusCallsign", "Valhalla"],["_numberOfSections", 3]];
+
+if (_callsign == "") then {
+	_callsign = "Odin";
+};
+
+if (_zeusCallsign == "") then {
+	_zeusCallsign = "Valhalla";
+};
 
 _centralPos = screenToWorld [0, 0];
 _entities =
@@ -117,7 +126,7 @@ set3DENAttributes [[get3DENSelected "Group","groupID", "Zeus"] ,[_zeusUnits,"Con
 } forEach _zeusUnits;
 
 _asZeus = _zeusUnits select 1;
-leader _asZeus set3DENAttribute ["description", "1. Zeus@Command"];
+leader _asZeus set3DENAttribute ["description", format ["1. Zeus@%1", _zeusCallsign]];
 leader _asZeus set3DENAttribute ["name", "zeusOne"];
 _asZeus set3DENAttribute ["description", "2. A.Zeus"];
 _asZeus set3DENAttribute ["name", "zeusTwo"];

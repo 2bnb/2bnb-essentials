@@ -93,8 +93,12 @@ class Extended_PostInit_EventHandlers {
 // Config features/fixes
 #include "configs\CfgArsenalStats.hpp"
 #include "configs\CfgBarrelSwaps.hpp"
+#include "configs\CfgDefines.hpp"
 #include "configs\CfgDirectConnect.hpp"
+#include "configs\CfgEdenGUI.hpp"
+#include "configs\CfgEdenLoadouts.hpp"
 #include "configs\CfgEdenModules.hpp"
+#include "configs\CfgEdenTools.hpp"
 #include "configs\CfgEnableDebug.hpp"
 #include "configs\CfgExplosives.hpp"
 #include "configs\CfgHearingProtection.hpp"
@@ -105,5 +109,3 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgVehicleDeploy.hpp"
 #include "configs\CfgZenMenu.hpp"
 #include "configs\CfgZeusActions.hpp"
-#include "configs\CfgEdenLoadouts.hpp"
-#include "configs\CfgEdenTools.hpp"
