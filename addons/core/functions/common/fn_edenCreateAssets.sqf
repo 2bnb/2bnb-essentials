@@ -83,6 +83,21 @@ _entities =
 	]
 ];
 
+_sections =
+[
+	[
+		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "command", _centralPos vectorAdd [0, 0]],
+		"Command",
+		["description", format ["1. 1IC@%1 1-Actual", _callsign ]]
+	],
+	[
+		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "zeus", _centralPos vectorAdd [1, 2]],
+		"Zeus",
+		["description", format ["1. Zeus@%1", _zeusCallsign]],
+		"zeus"
+	]
+];
+
 _last = "";
 {
 	_entity = _x select 0;
@@ -95,31 +110,32 @@ _last = "";
 	};
 } forEach _entities;
 
-create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "command", _centralPos vectorAdd [0, 0]];
-set3DENAttributes [[get3DENSelected "Group","groupID", "Command"] ,[get3DENSelected "Object","ControlMP",true]];
-_group = get3DENselected "Object" select 0;
-leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-Actual", _callsign ]];
-set3DENSelected [];
-
 for "_i" from 1 to _numberOfSections do {
     create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_i, 0, 0]];
-	set3DENAttributes [[get3DENSelected "Group","groupID", format ["1-%1 Sec", _i]] ,[get3DENSelected "Object","ControlMP",true]];
+	set3DENAttributes [[get3DENSelected "Group","groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object","ControlMP",true]];
 	_group = get3DENselected "Object" select 0;
 	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign , _i]];
 	set3DENSelected [];
 };
 
-create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "zeus", _centralPos vectorAdd [1, 2]];
-_zeusUnits = get3DENSelected "Object";
-set3DENAttributes [[get3DENSelected "Group","groupID", "Zeus"] ,[_zeusUnits,"ControlMP",true]];
 {
-	removeBackpack _x;
-	_x addBackpack "tfw_ilbe_blade_gr";
-} forEach _zeusUnits;
-
-_asZeus = _zeusUnits select 1;
-leader _asZeus set3DENAttribute ["description", format ["1. Zeus@%1", _zeusCallsign]];
-leader _asZeus set3DENAttribute ["name", "zeusOne"];
-_asZeus set3DENAttribute ["description", "2. A.Zeus"];
-_asZeus set3DENAttribute ["name", "zeusTwo"];
-set3DENSelected [];
+	_configPath = _x select 0;
+	_attributeOne = _x select 1;
+	_attributeTwo = _x select 2;
+	create3DENComposition _configPath;
+	set3DENAttributes [[get3DENSelected "Group","groupID", _attributeOne], [get3DENSelected "Object","ControlMP",true]];
+	_groupComp = get3DENSelected "Object";
+	_group = _groupComp select 0;
+	leader _group set3DENAttribute _attributeTwo;
+	if ((_x select 3) == "zeus") then {
+		leader _group set3DENAttribute ["name", "zeusOne"];
+		_asZeus = _groupComp select 1;
+		_asZeus set3DENAttribute ["description", "2. A.Zeus"];
+		_asZeus set3DENAttribute ["name", "zeusTwo"];
+		{
+			removeBackpack _x;
+			_x addBackpack "tfw_ilbe_blade_gr";
+		} forEach _groupComp;
+	};
+	set3DENSelected [];
+} forEach _sections;
