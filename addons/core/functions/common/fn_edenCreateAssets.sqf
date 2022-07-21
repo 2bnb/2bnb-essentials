@@ -65,43 +65,35 @@ _entities =
 		["Logic", "HeadlessClient_F", _centralPos vectorAdd [-2, -2]],
 		["ControlMp", true],
 		["name", "HC3"]
-	]
-];
-
-_arsenalObjects =
-[
-	[
+	],
+		[
 		["Object", "B_supplyCrate_F", _centralPos vectorAdd [-3, 6]],
-		["allowDamage", false]
+		["allowDamage", false],
+		["ArsenalObject", true]
 	],
 	[
 		["Logic", "BNB_ES_Barracks_Module", _centralPos vectorAdd [-4, 7]],
-		["BNB_ES_Barracks_Module_ArsenalFilter", "Standard"]
+		["BNB_ES_Barracks_Module_ArsenalFilter", "Standard"],
+		["ArsenalObject", true]
 	],
 	[
 		["Object", "B_supplyCrate_F", _centralPos vectorAdd [-5, 6]],
-		["allowDamage", false]
+		["allowDamage", false],
+		["ArsenalObject", true]
 	]
 ];
 
+_last = "";
 {
 	_entity = _x select 0;
 	_attributeOne = _x select 1;
 	_attributeTwo = _x select 2;
 	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo;
+	if ((_attributeTwo select 0) == "ArsenalObject") then {
+		add3DENConnection ["Sync", [_last], _current];
+		_last = _current;
+	};
 } forEach _entities;
-
-_arsenalObjectsCreated = [];
-_last = "";
-{
-	_entity = _x select 0;
-	_attributeOne = _x select 1;
-	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo;
-	add3DENConnection ["Sync", [_last], _current];
-	_last = _current;
-} forEach _arsenalObjects;
-
-add3DENConnection ["Sync", get3DENSelected "object", _arsenalObjectsCreated];
 
 create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "command", _centralPos vectorAdd [0, 0]];
 set3DENAttributes [[get3DENSelected "Group","groupID", "Command"] ,[get3DENSelected "Object","ControlMP",true]];
