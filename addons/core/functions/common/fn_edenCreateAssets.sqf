@@ -39,17 +39,20 @@ _entities =
 	[
 		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, 0]],
 		["ModuleCurator_F_Owner", "zeusOne"],
-		["ModuleCurator_F_Name", "Active Zeus"]
+		["ModuleCurator_F_Name", "Active Zeus"],
+		["ModuleCurator_F_Addons", 3]
 	],
 	[
 		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, -1]],
 		["ModuleCurator_F_Owner", "zeusTwo"],
-		["ModuleCurator_F_Name", "Assistant Zeus"]
+		["ModuleCurator_F_Name", "Assistant Zeus"],
+		["ModuleCurator_F_Addons", 3]
 	],
 	[
 		["Logic", "ModuleCurator_F", _centralPos vectorAdd [-1, -2]],
 		["ModuleCurator_F_Owner", "#adminLogged"],
-		["ModuleCurator_F_Name", "Admin"]
+		["ModuleCurator_F_Name", "Admin"],
+		["ModuleCurator_F_Addons", 3]
 	],
 	[
 		["Logic", "HeadlessClient_F", _centralPos vectorAdd [-2, 0]],
@@ -93,8 +96,7 @@ _sections =
 	[
 		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "zeus", _centralPos vectorAdd [1, 2]],
 		"Zeus",
-		["description", format ["1. Zeus@%1", _zeusCallsign]],
-		"zeus"
+		["description", format ["1. Zeus@%1", _zeusCallsign]]
 	]
 ];
 
@@ -103,19 +105,22 @@ _last = "";
 	_entity = _x select 0;
 	_attributeOne = _x select 1;
 	_attributeTwo = _x select 2;
-	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo;
+	_attributeThree = _x select 3;
+	_current = create3DENEntity _entity, _current set3DENAttribute _attributeOne, _current set3DENAttribute _attributeTwo, _current set3DENAttribute _attributeThree;
 	if ((_attributeTwo select 0) == "ArsenalObject") then {
 		add3DENConnection ["Sync", [_last], _current];
 		_last = _current;
 	};
 } forEach _entities;
 
+_num = 1;
 for "_i" from 1 to _numberOfSections do {
-    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_i, 0, 0]];
+    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group","groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object","ControlMP",true]];
 	_group = get3DENselected "Object" select 0;
 	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign , _i]];
 	set3DENSelected [];
+	_num = _num + 2;
 };
 
 {
@@ -127,7 +132,7 @@ for "_i" from 1 to _numberOfSections do {
 	_groupComp = get3DENSelected "Object";
 	_group = _groupComp select 0;
 	leader _group set3DENAttribute _attributeTwo;
-	if ((_x select 3) == "zeus") then {
+	if ((_attributeOne) == "Zeus") then {
 		leader _group set3DENAttribute ["name", "zeusOne"];
 		_asZeus = _groupComp select 1;
 		_asZeus set3DENAttribute ["description", "2. A.Zeus"];

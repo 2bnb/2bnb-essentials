@@ -16,7 +16,7 @@ class display3DEN
 				};
 				class bnb_es_settings {
 					text = "Load 2BNB Settings";
-					action = "[] call bnb_es_core_fnc_edenLoadSettings";
+					action = "['Are you sure you want to overwrite current settings with 2BNB defaults?', 'Load 2BNB Settings', ['Overwrite', {[] call bnb_es_core_fnc_edenLoadSettings}], true] call BIS_fnc_3DENShowMessage";
 				};
 				class bnb_es_assets {
 					text = "Load 2BNB Slots & Modules";
@@ -73,22 +73,22 @@ class CfgGroups
 						rank = "PRIVATE";
 					};
 					class Unit4 {
-						position[] = {5,0,0};
+						position[] = {1,0,0};
 						vehicle = "SAM_Soldier_SF_M90_RL";
 						rank = "PRIVATE";
 					};
 					class Unit5 {
-						position[] = {5,-3,0};
+						position[] = {1,-3,0};
 						vehicle = "SAM_Soldier_SF_M90_RL";
 						rank = "PRIVATE";
 					};
 					class Unit6 {
-						position[] = {5,-6,0};
+						position[] = {1,-6,0};
 						vehicle = "SAM_Soldier_SF_M90_RL";
 						rank = "PRIVATE";
 					};
 					class Unit7 {
-						position[] = {5,-9,0};
+						position[] = {1,-9,0};
 						vehicle = "SAM_Soldier_SF_M90_RL";
 						rank = "PRIVATE";
 					};

@@ -73,7 +73,7 @@ class bnb_es_edenGUI {
 			color[] = {1,1,1,0.6};
 			colorActive[] = {1,1,1,1};
 			colorDisable[] = {1,1,1,0.4};
-			sliderRange[] = {0, 10};
+			sliderRange[] = {0, 9};
 			sliderPosition = 3;
 			tooltip = "Number of sections to spawn :";
 			sliderStep = 1;
@@ -116,7 +116,7 @@ class bnb_es_edenGUI {
 			h = 0.04;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.8};
-			action = "[ctrlText 1400, ctrlText 1461, sliderPosition 1900] call bnb_es_core_fnc_edenCreateAssets";
+			onButtonClick = "[ctrlText 1400, ctrlText 1461, sliderPosition 1900] call bnb_es_core_fnc_edenCreateAssets";
 		};
 		class bnb_es_cancelButton: RscButtonMenuCancel {
 			x = 0.7;
