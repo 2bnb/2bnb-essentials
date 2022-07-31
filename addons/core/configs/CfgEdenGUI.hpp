@@ -1,17 +1,16 @@
 class bnb_es_edenGUI {
-	idd = 1;
+	idd = 1901;
+	movingEnable = 1;
 	class Controls{
 		class bnb_es_frame: RscFrame {
 			idc = 1800;
-
 			x = 0.1;
 			y = 0.02;
 			w = 0.734999;
 			h = 0.58;
 		};
-		class bnb_es_background: RscText {
+		class bnb_es_background: RscBackground {
 			idc = 1000;
-
 			x = 0.1;
 			y = 0.02;
 			w = 0.7375;
@@ -19,9 +18,8 @@ class bnb_es_edenGUI {
 			colorBackground[] = {0,0,0,0.6};
 			sizeEx = 1.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * GUI_GRID_H;
 		};
-		class bnb_es_callsignsSelect: RscText {
+		class bnb_es_callsignSectionText: RscText {
 			idc = 1001;
-
 			text = "Section Callsign :";
 			x = 0.112499;
 			y = 0.12;
@@ -29,21 +27,19 @@ class bnb_es_edenGUI {
 			h = 0.04;
 			sizeEx = 1.2  * GUI_GRID_H;
 		};
-		class bnb_es_callsignEnter: RscEdit {
+		class bnb_es_callsignSectionEdit: RscEdit {
 			idc = 1400;
-
 			x = 0.124999;
 			y = 0.18;
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign of sections";
+			tooltip = "Callsign of sections. Default: Odin";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
-		class bnb_es_hqCallsign: RscText {
+		class bnb_es_callsignZeusText: RscText {
 			idc = 1002;
-
 			text = "HQ Callsign :";
 			x = 0.1125;
 			y = 0.28;
@@ -51,21 +47,19 @@ class bnb_es_edenGUI {
 			h = 0.04;
 			sizeEx = 1.2  * GUI_GRID_H;
 		};
-		class bnb_es_callsignEnterHq: RscEdit {
+		class bnb_es_callsignZeusEdit: RscEdit {
 			idc = 1461;
-
 			x = 0.124999;
 			y = 0.34;
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign for zeus";
+			tooltip = "Callsign for zeus. Default: Valhalla";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
-		class bnb_es_sectionAmount: RscXSliderH {
+		class bnb_es_sectionAmountSlider: RscXSliderH {
 			idc = 1900;
-
 			x = 0.112499;
 			y = 0.52;
 			w = 0.225;
@@ -75,13 +69,13 @@ class bnb_es_edenGUI {
 			colorDisable[] = {1,1,1,0.4};
 			sliderRange[] = {0, 9};
 			sliderPosition = 3;
-			tooltip = "Number of sections to spawn :";
+			tooltip = "Number of sections to spawn. Default: 3";
 			sliderStep = 1;
 			arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
 			arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
-			onSliderPosChanged = "ctrlSetText [1006, str sliderPosition 1900]";
-		};
-		class bnb_es_sectionCounter: RscText {
+			onSliderPosChanged = "(findDisplay 1901 displayCtrl 1006) ctrlSetText str sliderPosition (findDisplay 1901 displayCtrl 1900)";
+			};
+		class bnb_es_sectionAmountCounter: RscText {
 			idc = 1006;
 			text = "3";
 			x = 0.438125 * safezoneW + safezoneX;
@@ -91,7 +85,6 @@ class bnb_es_edenGUI {
 		};
 		class bnb_es_sectionAmountText: RscText {
 			idc = 1003;
-
 			text = "Number of Sections";
 			x = 0.112499;
 			y = 0.46;
@@ -101,7 +94,6 @@ class bnb_es_edenGUI {
 		};
 		class bnb_es_title: RscText {
 			idc = 1004;
-
 			text = "Load 2BNB Slots & Modules";
 			x = 0.112499;
 			y = 0.04;
@@ -116,7 +108,7 @@ class bnb_es_edenGUI {
 			h = 0.04;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.8};
-			onButtonClick = "[ctrlText 1400, ctrlText 1461, sliderPosition 1900] call bnb_es_core_fnc_edenCreateAssets";
+			onButtonClick = "[ctrlText (findDisplay 1901 displayCtrl 1400), ctrlText (findDisplay 1901 displayCtrl 1461), sliderPosition (findDisplay 1901 displayCtrl 1900)] call bnb_es_core_fnc_edenCreateAssets";
 		};
 		class bnb_es_cancelButton: RscButtonMenuCancel {
 			x = 0.7;

@@ -18,7 +18,7 @@ Examples:
 Author:
 	Met
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Odin"],["_zeusCallsign", "Valhalla"],["_numberOfSections", 3]];
+params [["_callsign", "Odin", [""]],["_zeusCallsign", "Valhalla", [""]],["_numberOfSections", 3, [0]]];
 
 if (_callsign == "") then {
 	_callsign = "Odin";
@@ -100,6 +100,7 @@ _sections =
 	]
 ];
 
+// Individual entities, such as arsenals and headless clients
 _last = "";
 {
 	_entity = _x select 0;
@@ -113,6 +114,7 @@ _last = "";
 	};
 } forEach _entities;
 
+// The main sections
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
     create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_num, 0, 0]];
@@ -123,6 +125,7 @@ for "_i" from 1 to _numberOfSections do {
 	_num = _num + 2;
 };
 
+// Command and Zeus
 {
 	_configPath = _x select 0;
 	_attributeOne = _x select 1;

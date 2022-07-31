@@ -20,7 +20,7 @@ class display3DEN
 				};
 				class bnb_es_assets {
 					text = "Load 2BNB Slots & Modules";
-					action = "createDialog ['bnb_es_edenGUI', true]";
+					action = "findDisplay 313 createDisplay 'bnb_es_edenGUI'";
 				};
 			};
 		};
