@@ -11,10 +11,12 @@ class CfgPatches {
 		version = 1.0.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
+		is3DENmod = 1;
 
 		// Addon requirements
 		requiredVersion = 2.00;
 		requiredAddons[] = {
+			"3DEN",
 			"cba_settings",
 			"ace_arsenal",
 			"ace_explosives",
