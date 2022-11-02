@@ -17,7 +17,8 @@ class CfgPatches {
 			"Krieg",
 			"Badger",
 			"Nikki",
-			"SeeOne"
+			"SeeOne",
+			"Metformin"
 		};
 		url = "https://discord.gg/rUUsCShkzJ";
 		version = 1.0.0;
@@ -310,5 +311,26 @@ class CfgUnitInsignia
 		displayName="Pride Flag - Transgender";
 		author="Nikki";
 		texture="x\bnb_es\custom_patches\img\pride-flag-transgender.paa";
+	};
+
+	class BNB_ES_Marky
+	{
+		displayName="The Polish One";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Marky.paa";
+	};
+
+	class BNB_ES_PrideFlagTransgender
+	{
+		displayName="Stormwire";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Stormwire.paa";
+	};
+
+	class BNB_ES_PrideFlagTransgender
+	{
+		displayName="TF15 Japanese";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Japan.paa";
 	};
 };
