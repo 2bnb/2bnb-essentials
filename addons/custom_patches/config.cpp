@@ -320,17 +320,24 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\Marky.paa";
 	};
 
-	class BNB_ES_PrideFlagTransgender
+	class BNB_ES_Stormwire
 	{
 		displayName="Stormwire";
 		author="Met";
 		texture="x\bnb_es\custom_patches\img\Stormwire.paa";
 	};
 
-	class BNB_ES_PrideFlagTransgender
+	class BNB_ES_Japanese
 	{
 		displayName="TF15 Japanese";
 		author="Met";
 		texture="x\bnb_es\custom_patches\img\Japan.paa";
+	};
+
+		class BNB_ES_Japanese_Textured
+	{
+		displayName="TF15 Japanese Textured";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Japan_Texture.paa";
 	};
 };
