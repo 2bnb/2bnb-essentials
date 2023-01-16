@@ -61,13 +61,6 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\punisher.paa";
 	};
 
-	class BNB_ES_Rball
-	{
-		displayName="Rball";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\rball.paa";
-	};
-
 	class BNB_ES_SC
 	{
 		displayName="SC";
@@ -75,67 +68,11 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\sc.paa";
 	};
 
-	class BNB_ES_Trump
-	{
-		displayName="Trump";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\trump.paa";
-	};
-
-	class BNB_ES_Ussr
-	{
-		displayName="Ussr";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\ussr.paa";
-	};
-
-	class BNB_ES_Ussr1
-	{
-		displayName="Ussr1";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\ussr1.paa";
-	};
-
-	class BNB_ES_Ussr2
-	{
-		displayName="Ussr2";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\ussr2.paa";
-	};
-
 	class BNB_ES_2BNB
 	{
 		displayName="2BNB";
 		author="SeeOne";
 		texture="x\bnb_es\custom_patches\img\2bnb-logo.paa";
-	};
-
-	class BNB_ES_2BNBOld
-	{
-		displayName="2BNB Old";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\2bnb-logo-old.paa";
-	};
-
-	class BNB_ES_2BNBAltOld
-	{
-		displayName="2BNB Alternate Old";
-		author="Arend";
-		texture="x\bnb_es\custom_patches\img\2bnb-patch-old.paa";
-	};
-
-	class BNB_ES_Putin
-	{
-		displayName="Putin";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\putin.paa";
-	};
-
-	class BNB_ES_Putin1
-	{
-		displayName="Putin1";
-		author="Ford";
-		texture="x\bnb_es\custom_patches\img\putin1.paa";
 	};
 
 	class BNB_ES_Canada
@@ -150,41 +87,6 @@ class CfgUnitInsignia
 		displayName="Australia";
 		author="Ford";
 		texture="x\bnb_es\custom_patches\img\australia.paa";
-	};
-
-	class BNB_ES_ScruffyHammond
-	{
-		displayName="Scruffy Hammond";
-		author="Psycho";
-		texture="x\bnb_es\custom_patches\img\hammond.paa";
-	};
-
-	class BNB_ES_Order66
-	{
-		displayName="Order 66";
-		author="Farcry";
-		texture="x\bnb_es\custom_patches\img\order66.paa";
-	};
-
-	class BNB_ES_KimmyJongyBoi
-	{
-		displayName="Kimmy Jongy Boi";
-		author="Farcry";
-		texture="x\bnb_es\custom_patches\img\kimmy-jongy-boi.paa";
-	};
-
-	class BNB_ES_WolfpackInsignia
-	{
-		displayName="Wolfpack Insignia";
-		author="Wolfpack";
-		texture="x\bnb_es\custom_patches\img\wolfpack-insignia.paa";
-	};
-
-	class BNB_ES_JebbyInsignia
-	{
-		displayName="Jebby Insignia";
-		author="Jebby";
-		texture="x\bnb_es\custom_patches\img\jebby-insignia.paa";
 	};
 
 	class BNB_ES_FarcryInsignia
@@ -208,27 +110,6 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\tom-jerry.paa";
 	};
 
-	class BNB_ES_MedicPatch
-	{
-		displayName="2BNB Medic Patch";
-		author="Badger";
-		texture="x\bnb_es\custom_patches\img\2bnb-medic-patch.paa";
-	};
-
-	class BNB_ES_MedicPatch2
-	{
-		displayName="2BNB Alternate Medic Patch";
-		author="Seth";
-		texture="x\bnb_es\custom_patches\img\2bnb-medic-patch2.paa";
-	};
-
-	class BNB_ES_ArendsBrother
-	{
-		displayName="Arend's Brother";
-		author="Krieg";
-		texture="x\bnb_es\custom_patches\img\arends-brother.paa";
-	};
-
 	class BNB_ES_DeathKorpsOfKrieg
 	{
 		displayName="Death Korps of Krieg";
@@ -243,12 +124,6 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\goat.paa";
 	};
 
-	class BNB_ES_ReconWolves
-	{
-		displayName="Recon Wolves";
-		author="Krieg";
-		texture="x\bnb_es\custom_patches\img\recon-wolves.paa";
-	};
 
 	class BNB_ES_CallsignViking
 	{
