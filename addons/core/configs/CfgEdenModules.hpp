@@ -71,21 +71,23 @@ class CfgVehicles {
 						name = "Standard";
 						value = "standard";
 					};
-					class West {
-						name = "West";
-						value = "west";
+					class MTP {
+						name = "MTP";
+						value = "mtp";
+					};
+					class Desert {
+						//desert DPM
+						name = "Desert";
+						value = "desert";
+					};
+					class Woodland {
+						//woodland tropical
+						name = "Woodland";
+						value = "woodland";
 					};
 					class East {
 						name = "East";
 						value = "east";
-					};
-					class Independent {
-						name = "Independent";
-						value = "independent";
-					};
-					class Outlaw {
-						name = "Outlaw";
-						value = "outlaw";
 					};
 					class Mission {
 						name = "Mission";

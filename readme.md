@@ -35,10 +35,7 @@
 ### Recommended Mods
 Whilst 2BNB Essentials don't depend on the following mods, some individual functionality will be missing without them:
 - [Zeus Enhanced](https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631)
-- [KLPQ Music Player](https://steamcommunity.com/sharedfiles/filedetails/?id=1241545493)
 - [TFAR 1.0 (BETA)](https://steamcommunity.com/sharedfiles/filedetails/?id=894678801)
-- [ILBE Assault Pack - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=1875281645)
-- [BWMod](https://steamcommunity.com/workshop/filedetails/?id=1200127537)
 
 # Credits
 - GRAD developer, for their [gruppe_adler_mod](https://github.com/gruppe-adler/gruppe_adler_mod) and allowing us to use parts of it for the basis of some of our addons

@@ -25,11 +25,11 @@ class CfgWeapons {
 	};
 
 	// Global Mobilisation MG3
-	class gm_mg3_base;
-	class gm_mg3_blk : gm_mg3_base {
-		ace_overheating_allowSwapBarrel = 1;
-	};
-	class gm_mg3_des : gm_mg3_base {
-		ace_overheating_allowSwapBarrel = 1;
-	};
+	//class gm_mg3_base;
+	//class gm_mg3_blk : gm_mg3_base {
+	//	ace_overheating_allowSwapBarrel = 1;
+	//};
+	//class gm_mg3_des : gm_mg3_base {
+	//	ace_overheating_allowSwapBarrel = 1;
+	//};
 };

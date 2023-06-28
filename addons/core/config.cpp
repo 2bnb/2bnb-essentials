@@ -5,7 +5,10 @@ class CfgPatches {
 		author = "2nd Battalion, Nord Brigade";
 		authors[] = {
 			"Ford",
-			"Arend"
+			"Arend",
+			"FarCry",
+			"Carmichael",
+			"Met",
 		};
 		url = "https://discord.gg/rUUsCShkzJ";
 		version = 1.0.0;

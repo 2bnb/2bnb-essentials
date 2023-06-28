@@ -47,12 +47,12 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\kompis.paa";
 	};
 
-	class BNB_ES_Jepulis
-	{
-		displayName="jepulis";
-		author="Ellku";
-		texture="x\bnb_es\custom_patches\img\jepulis.paa";
-	};
+	//class BNB_ES_Jepulis
+	//{
+	//	displayName="jepulis";
+	//	author="Ellku";
+	//	texture="x\bnb_es\custom_patches\img\jepulis.paa";
+	//};
 
 	class BNB_ES_Punisher
 	{
@@ -89,19 +89,19 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\australia.paa";
 	};
 
-	class BNB_ES_FarcryInsignia
-	{
-		displayName="Farcry Insignia";
-		author="Farcry";
-		texture="x\bnb_es\custom_patches\img\farcry-insignia.paa";
-	};
+	//class BNB_ES_FarcryInsignia
+	//{
+	//	displayName="Farcry Insignia";
+	//	author="Farcry";
+	//	texture="x\bnb_es\custom_patches\img\farcry-insignia.paa";
+	//};
 
-	class BNB_ES_FarcryInsignia2
-	{
-		displayName="Farcry Insignia 2";
-		author="Farcry";
-		texture="x\bnb_es\custom_patches\img\farcry-insignia2.paa";
-	};
+	//class BNB_ES_FarcryInsignia2
+	//{
+	//	displayName="Farcry Insignia 2";
+	//	author="Farcry";
+	//	texture="x\bnb_es\custom_patches\img\farcry-insignia2.paa";
+	//};
 
 	class BNB_ES_TomJerry
 	{
@@ -125,19 +125,19 @@ class CfgUnitInsignia
 	};
 
 
-	class BNB_ES_CallsignViking
-	{
-		displayName="Callsign Viking";
-		author="Carmichael";
-		texture="x\bnb_es\custom_patches\img\callsign-viking.paa";
-	};
+	//class BNB_ES_CallsignViking
+	//{
+	//	displayName="Callsign Viking";
+	//	author="Carmichael";
+	//	texture="x\bnb_es\custom_patches\img\callsign-viking.paa";
+	//};
 
-	class BNB_ES_CallsignVikingCamo
-	{
-		displayName="Callsign Viking (Camo)";
-		author="Carmichael";
-		texture="x\bnb_es\custom_patches\img\callsign-viking-camo.paa";
-	};
+	//class BNB_ES_CallsignVikingCamo
+	//{
+	//	displayName="Callsign Viking (Camo)";
+	//	author="Carmichael";
+	//	texture="x\bnb_es\custom_patches\img\callsign-viking-camo.paa";
+	//};
 
 	class BNB_ES_SouthAfrica
 	{
@@ -202,17 +202,17 @@ class CfgUnitInsignia
 		texture="x\bnb_es\custom_patches\img\Stormwire.paa";
 	};
 
-	class BNB_ES_Japanese
-	{
-		displayName="TF15 Japanese";
-		author="Met";
-		texture="x\bnb_es\custom_patches\img\Japan.paa";
-	};
+	//class BNB_ES_Japanese
+	//{
+	//	displayName="TF15 Japanese";
+	//	author="Met";
+	//	texture="x\bnb_es\custom_patches\img\Japan.paa";
+	//};
 
-		class BNB_ES_Japanese_Textured
-	{
-		displayName="TF15 Japanese Textured";
-		author="Met";
-		texture="x\bnb_es\custom_patches\img\Japan_Texture.paa";
-	};
+	//	class BNB_ES_Japanese_Textured
+	//{
+	//	displayName="TF15 Japanese Textured";
+	//	author="Met";
+	//	texture="x\bnb_es\custom_patches\img\Japan_Texture.paa";
+	//};
 };
