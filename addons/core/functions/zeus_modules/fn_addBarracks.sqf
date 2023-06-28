@@ -30,20 +30,20 @@ if (_objects isEqualType objNull) then {
 private _availableFilters = [
 	"",
 	"standard",
-	"west",
-	"east",
-	"independent",
-	"outlaw",
+	"multicam",
+	"desert",
+	"woodland",
+	"historic",
 	"mission"
 ];
 
 private _availableFilterNames = [
 	["Full", "Unlimited Arsenal!"],
-	["Standard", "Our usual 2BNB equipment"],
-	["West", "Western equipment"],
-	["East", "Russian equipment, including SSO"],
-	["Independent", "LDF, AAF and UN equipment, as well as weaponry from countries such as Poland, the Czech Republic, Romania, etc."],
-	["Outlaw", "PMC, Insurgents, Rebels, etc."],
+	["Standard", "All Camo 2BNB equipment"],
+	["Multicam", "MTP 2BNB equipment"],
+	["Desert", "DDPM 2BNB equipment"],
+	["Woodland", "DPMW 2BNB equipment"],
+	["Historic", "1970-1990s 2BNB equipment"],
 	"Mission"
 ];
 

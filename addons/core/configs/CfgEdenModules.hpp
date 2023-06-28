@@ -68,24 +68,28 @@ class CfgVehicles {
 						default = 1;
 					};
 					class Standard {
+						// all camo kits
 						name = "Standard";
 						value = "standard";
 					};
-					class West {
-						name = "West";
-						value = "west";
+					class Multicam {
+						// MTP
+						name = "Multicam";
+						value = "multicam";
 					};
-					class East {
-						name = "East";
-						value = "east";
+					class Desert {
+						//desert DDPM
+						name = "Desert";
+						value = "desert";
 					};
-					class Independent {
-						name = "Independent";
-						value = "independent";
+					class Tropical {
+						//woodland tropical DPMW
+						name = "Woodland";
+						value = "woodland";
 					};
-					class Outlaw {
-						name = "Outlaw";
-						value = "outlaw";
+					class Historic {
+						name = "Historic";
+						value = "historic";
 					};
 					class Mission {
 						name = "Mission";
