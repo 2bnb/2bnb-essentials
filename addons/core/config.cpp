@@ -14,10 +14,12 @@ class CfgPatches {
 		version = 1.0.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
+		is3DENmod = 1;
 
 		// Addon requirements
 		requiredVersion = 2.00;
 		requiredAddons[] = {
+			"3DEN",
 			"cba_settings",
 			"ace_arsenal",
 			"ace_explosives",
@@ -45,6 +47,8 @@ class CfgFunctions {
 			class addFullHeal {};
 			class addSpectator {};
 			class changeSpeakVolume {};
+			class edenLoadSettings {};
+			class edenCreateAssets {};
 			class getCurators {};
 			class getDeadPlayers {};
 			class getDeployAnimations {};
@@ -93,8 +97,12 @@ class Extended_PostInit_EventHandlers {
 // Config features/fixes
 #include "configs\CfgArsenalStats.hpp"
 #include "configs\CfgBarrelSwaps.hpp"
+#include "configs\CfgDefines.hpp"
 #include "configs\CfgDirectConnect.hpp"
+#include "configs\CfgEdenGUI.hpp"
+#include "configs\CfgEdenLoadouts.hpp"
 #include "configs\CfgEdenModules.hpp"
+#include "configs\CfgEdenTools.hpp"
 #include "configs\CfgEnableDebug.hpp"
 #include "configs\CfgExplosives.hpp"
 #include "configs\CfgHearingProtection.hpp"
@@ -105,4 +113,3 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgVehicleDeploy.hpp"
 #include "configs\CfgZenMenu.hpp"
 #include "configs\CfgZeusActions.hpp"
-#include "configs\CfgEdenLoadouts.hpp"
