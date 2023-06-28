@@ -45,7 +45,6 @@ class CfgFunctions {
 			class addFullHeal {};
 			class addSpectator {};
 			class changeSpeakVolume {};
-			class connectToServer {};
 			class getCurators {};
 			class getDeadPlayers {};
 			class getDeployAnimations {};
