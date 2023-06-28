@@ -34,7 +34,7 @@ class bnb_es_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign of sections. Default: Odin";
+			tooltip = "Callsign of sections. Default: Raider";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
@@ -54,10 +54,66 @@ class bnb_es_edenGUI {
 			w = 0.225;
 			h = 0.06;
 			colorBackground[] = {0.5,0.5,0.5,0.6};
-			tooltip = "Callsign for zeus. Default: Valhalla";
+			tooltip = "Callsign for zeus. Default: Monarch";
 			sizeEx = 1.1 * GUI_GRID_H;
 			canModify = 1;
 		};
+
+		class bnb_es_camoSelectionText: RscText {
+			idc = 1033;
+			text = "Camo Selection:";
+			x = 0.4;
+			y = 0.12;
+			w = 0.225;
+			h = 0.06;
+			sizeEx = 1.2  * GUI_GRID_H;
+		};
+
+		class bnb_es_camoSelectionDropdown: RscCombo {
+			idc = 1902;
+			x = 0.4;
+			y = 0.18;
+			w = 0.225;
+			h = 0.06;
+			colorBackground[] = {0.5,0.5,0.5,0.6};
+			tooltip = "Select camo option";
+			sizeEx = 1.1 * GUI_GRID_H;
+
+			class Items {
+				class MTP {
+					text = "MTP";
+					data = "MTP";
+				};
+				class Desert {
+					text = "Desert";
+					data = "Desert";
+				};
+				class Woodland {
+					text = "Woodland";
+					data = "Woodland";
+				};
+			};
+		};
+
+		class bnb_es_spawnDefaultsText: RscText {
+			idc = 1023;
+			text = "Create Defaults?";
+			x = 0.4;
+			y = 0.28;
+			w = 0.225;
+			h = 0.06;
+			sizeEx = 1.2  * GUI_GRID_H;
+		};
+
+		class bnb_es_spawnDefaultsCheckbox: RscCheckbox {
+			idc = 1903;
+			x = 0.4;
+			y = 0.34;
+			w = 0.05;
+			h = 0.05;
+			sizeEx = 1.2  * GUI_GRID_H;
+		};
+
 		class bnb_es_sectionAmountSlider: RscXSliderH {
 			idc = 1900;
 			x = 0.112499;
@@ -108,7 +164,7 @@ class bnb_es_edenGUI {
 			h = 0.04;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.8};
-			onButtonClick = "[ctrlText (findDisplay 1901 displayCtrl 1400), ctrlText (findDisplay 1901 displayCtrl 1461), sliderPosition (findDisplay 1901 displayCtrl 1900)] call bnb_es_core_fnc_edenCreateAssets";
+   			onButtonClick = "private _callsign = ctrlText (findDisplay 1901 displayCtrl 1400); private _zeusCallsign = ctrlText (findDisplay 1901 displayCtrl 1461); private _camoCtrl = findDisplay 1901 displayCtrl 1902; private _camo = _camoCtrl lbData (lbCurSel _camoCtrl); private _numberOfSections = sliderPosition (findDisplay 1901 displayCtrl 1900); private _createDefaults = cbChecked (findDisplay 1901 displayCtrl 1903); diag_log format['Callsign: %1, Zeus Callsign: %2, Camo: %3, Number of Sections: %4, Create Defaults: %5', _callsign, _zeusCallsign, _camo, _numberOfSections, _createDefaults]; [ctrlText (findDisplay 1901 displayCtrl 1400), ctrlText (findDisplay 1901 displayCtrl 1461), _camo, _numberOfSections, _createDefaults] call bnb_es_core_fnc_edenCreateAssets;";
 		};
 		class bnb_es_cancelButton: RscButtonMenuCancel {
 			x = 0.7;

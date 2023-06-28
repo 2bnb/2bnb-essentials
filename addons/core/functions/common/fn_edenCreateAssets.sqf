@@ -1,32 +1,44 @@
 /* ----------------------------------------------------------------------------
-Function: bnb_es_core_fnc_edenCreateAssets
+	Function: bnb_es_core_fnc_edenCreateAssets
 
-Description:
+	Description:
 	Creates mission slots, modules and markers.
 
-Parameters:
+	Parameters:
 	0: _callsign - The platoon callsign that all sections will use <String>
 	1: _zeusCallsign - The callsign that HQ will use <String>
-	2: _numberOfSections - The number of sections to spawn <Number>
+	2: _camo - The camo the units will use <String>
+	3: _numberOfSections - The number of sections to spawn <Number>
+	4: _createDefaults - Whether to create a section to use as default loadout units <Bool>
 
-Returns:
+	Returns:
 	Nothing.
 
-Examples:
-	["Odin", "Valhalla", 3] call bnb_es_core_fnc_edenCreateAssets;
+	Examples:
+	["Odin", "Valhalla", "MTP", 3, false] call bnb_es_core_fnc_edenCreateAssets;
 
-Author:
+	Author:
 	Met
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Odin", [""]],["_zeusCallsign", "Valhalla", [""]],["_numberOfSections", 3, [0]]];
+params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]],["_createDefaults", false, [false]]];
 
 if (_callsign == "") then {
-	_callsign = "Odin";
+	_callsign = "Raider";
 };
 
 if (_zeusCallsign == "") then {
-	_zeusCallsign = "Valhalla";
+	_zeusCallsign = "Monarch";
 };
+
+if (_camo == "") then {
+	_camo = "MTP";
+};
+
+_camo = toUpper _camo;
+_nameZeus = format ["%1_zeus", _camo];
+_nameSection = format ["%1_section", _camo];
+_nameCommand = format ["%1_command", _camo];
+_nameDefaults = format ["%1_defaults", _camo];
 
 _centralPos = screenToWorld [0, 0];
 _entities =
@@ -69,7 +81,7 @@ _entities =
 		["ControlMp", true],
 		["name", "HC3"]
 	],
-		[
+	[
 		["Object", "B_supplyCrate_F", _centralPos vectorAdd [-3, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
@@ -89,12 +101,12 @@ _entities =
 _sections =
 [
 	[
-		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "command", _centralPos vectorAdd [0, 0]],
+		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameCommand, _centralPos vectorAdd [0, 0]],
 		"Command",
 		["description", format ["1. 1IC@%1 1-Actual", _callsign ]]
 	],
 	[
-		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "zeus", _centralPos vectorAdd [1, 2]],
+		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameZeus, _centralPos vectorAdd [1, 2]],
 		"Zeus",
 		["description", format ["1. Zeus@%1", _zeusCallsign]]
 	]
@@ -117,10 +129,10 @@ _last = "";
 // The main sections
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
-    create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> "section", _centralPos vectorAdd [_num, 0, 0]];
-	set3DENAttributes [[get3DENSelected "Group","groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object","ControlMP",true]];
+	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameSection, _centralPos vectorAdd [_num, 0, 0]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
-	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign , _i]];
+	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign, _i]];
 	set3DENSelected [];
 	_num = _num + 2;
 };
@@ -131,7 +143,7 @@ for "_i" from 1 to _numberOfSections do {
 	_attributeOne = _x select 1;
 	_attributeTwo = _x select 2;
 	create3DENComposition _configPath;
-	set3DENAttributes [[get3DENSelected "Group","groupID", _attributeOne], [get3DENSelected "Object","ControlMP",true]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", _attributeOne], [get3DENSelected "Object", "ControlMP", true]];
 	_groupComp = get3DENSelected "Object";
 	_group = _groupComp select 0;
 	leader _group set3DENAttribute _attributeTwo;
@@ -140,10 +152,18 @@ for "_i" from 1 to _numberOfSections do {
 		_asZeus = _groupComp select 1;
 		_asZeus set3DENAttribute ["description", "2. A.Zeus"];
 		_asZeus set3DENAttribute ["name", "zeusTwo"];
-		{
-			removeBackpack _x;
-			_x addBackpack "tfw_ilbe_blade_gr";
-		} forEach _groupComp;
 	};
 	set3DENSelected [];
 } forEach _sections;
+
+// default Loadouts
+if (_createDefaults) then {
+	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameDefaults, _centralPos vectorAdd [_num + 2, 3, 0]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "BNB_ES_3den_Loadout", true]];
+	_groupComp = get3DENSelected "Object";
+	{
+		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+		_x set3DENAttribute ["BNB_ES_3den_LoadoutName", _unitDisplayName];
+	} forEach _groupComp;
+	set3DENSelected [];
+};
