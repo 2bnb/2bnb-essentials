@@ -215,4 +215,10 @@ class CfgUnitInsignia
 	//	author="Met";
 	//	texture="x\bnb_es\custom_patches\img\Japan_Texture.paa";
 	//};
+	class BNB_ES_Hex
+	{
+		displayName="Hex ALt-Tab";
+		author="Hex";
+		texture="x\bnb_es\custom_patches\img\Hex.paa";
+	};
 };
