@@ -20,7 +20,7 @@
 	Author:
 	Met
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]],["_createDefaults", false, [false]]];
+params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
 
 if (_callsign == "") then {
 	_callsign = "Raider";
@@ -103,12 +103,12 @@ _sections =
 	[
 		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameCommand, _centralPos vectorAdd [0, 0]],
 		"Command",
-		["description", format ["1. 1IC@%1 1-Actual", _callsign ]]
+		["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
 	],
 	[
 		[configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameZeus, _centralPos vectorAdd [1, 2]],
 		"Zeus",
-		["description", format ["1. Zeus@%1", _zeusCallsign]]
+		["description", format ["1: Zeus@%1", _zeusCallsign]]
 	]
 ];
 
@@ -132,7 +132,25 @@ for "_i" from 1 to _numberOfSections do {
 	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "bnb_es_compositions" >> "infantry" >> _nameSection, _centralPos vectorAdd [_num, 0, 0]];
 	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["1-%1 Sec", _i]], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
-	leader _group set3DENAttribute ["description", format ["1. 1IC@%1 1-%2", _callsign, _i]];
+	_ix = 3;
+	{
+		_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+		if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+			_x set3DENAttribute ["description", "2: 2IC"];
+		} else {
+			if (_x getUnitTrait "Medic") then {
+				_x set3DENAttribute ["description", "3: Medic"];
+			} else {
+				if (_ix <= 6) then {
+					_x set3DENAttribute ["description", format ["%1: Open", _ix]];
+				} else {
+					_x set3DENAttribute ["description", format ["%1: Rifleman", _ix]];
+				};
+				_ix = _ix + 1;
+			};
+		};
+	} forEach units _group;
+	leader _group set3DENAttribute ["description", format ["1: 1IC@%1 1-%2", _callsign, _i]];
 	set3DENSelected [];
 	_num = _num + 2;
 };
@@ -146,13 +164,26 @@ for "_i" from 1 to _numberOfSections do {
 	set3DENAttributes [[get3DENSelected "Group", "groupID", _attributeOne], [get3DENSelected "Object", "ControlMP", true]];
 	_groupComp = get3DENSelected "Object";
 	_group = _groupComp select 0;
-	leader _group set3DENAttribute _attributeTwo;
 	if ((_attributeOne) == "Zeus") then {
 		leader _group set3DENAttribute ["name", "zeusOne"];
 		_asZeus = _groupComp select 1;
-		_asZeus set3DENAttribute ["description", "2. A.Zeus"];
+		_asZeus set3DENAttribute ["description", "2: A.Zeus"];
 		_asZeus set3DENAttribute ["name", "zeusTwo"];
+	} else {
+		{
+			_unitDisplayName = [configfile >> "CfgVehicles" >> typeOf _x] call BIS_fnc_displayName;
+			if (_unitDisplayName == "IC MTP" && !isFormationLeader _x) then {
+				_x set3DENAttribute ["description", "2: 2IC"];
+			} else {
+				if (_x getUnitTrait "Medic") then {
+					_x set3DENAttribute ["description", "3: Medic"];
+				} else {
+					_x set3DENAttribute ["description", "4: Open"];
+				};
+			};
+		} forEach units _group;
 	};
+	leader _group set3DENAttribute _attributeTwo;
 	set3DENSelected [];
 } forEach _sections;
 

@@ -1,6 +1,6 @@
-#define MTP_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
+#define CAMO0_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
 #define MTP_TEAMLEADER "BNB_FA_UK_IC_MTP"
-#define MTP_MEDIC "BNB_FA_UK_Medic_MTP"
+#define camo0_MEDIC "BNB_FA_UK_Medic_MTP"
 #define MTP_RIFLEMAN "BNB_FA_UK_Rifleman_MTP"
 
 #define DESERT_ASTEAMLEADER "BNB_FA_UK_IC_Desert"
@@ -12,7 +12,6 @@
 #define WOODLAND_TEAMLEADER "BNB_FA_UK_IC_Woodland"
 #define WOODLAND_MEDIC "BNB_FA_UK_Medic_Woodland"
 #define WOODLAND_RIFLEMAN "BNB_FA_UK_Rifleman_Woodland"
-
 
 class ctrlMenuStrip;
 class display3DEN
@@ -47,25 +46,28 @@ class CfgGroups
 	class West {
 		class bnb_es_compositions {
 			name = "2BNB";
+			scope = 0;
 			class infantry {
 				name = "";
 				class MTP_zeus {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
 				class MTP_section {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -75,7 +77,7 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
@@ -112,6 +114,7 @@ class CfgGroups
 				};
 				class MTP_command {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -121,7 +124,7 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
@@ -137,6 +140,7 @@ class CfgGroups
 				};
 				class MTP_defaults {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -157,6 +161,7 @@ class CfgGroups
 				};
 				class DESERT_zeus {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -172,6 +177,7 @@ class CfgGroups
 				};
 				class DESERT_section {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -218,6 +224,7 @@ class CfgGroups
 				};
 				class DESERT_command {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -243,6 +250,7 @@ class CfgGroups
 				};
 				class DESERT_defaults {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -263,6 +271,7 @@ class CfgGroups
 				};
 				class WOODLAND_zeus {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -278,6 +287,7 @@ class CfgGroups
 				};
 				class WOODLAND_section {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -324,6 +334,7 @@ class CfgGroups
 				};
 				class WOODLAND_command {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
@@ -349,6 +360,7 @@ class CfgGroups
 				};
 				class WOODLAND_defaults {
 					name = "";
+					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
