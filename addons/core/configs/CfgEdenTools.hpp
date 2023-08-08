@@ -1,6 +1,6 @@
-#define CAMO0_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
+#define MTP_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
 #define MTP_TEAMLEADER "BNB_FA_UK_IC_MTP"
-#define camo0_MEDIC "BNB_FA_UK_Medic_MTP"
+#define MTP_MEDIC "BNB_FA_UK_Medic_MTP"
 #define MTP_RIFLEMAN "BNB_FA_UK_Rifleman_MTP"
 
 #define DESERT_ASTEAMLEADER "BNB_FA_UK_IC_Desert"
@@ -56,12 +56,12 @@ class CfgGroups
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = CAMO0_ASTEAMLEADER;
+						vehicle = MTP_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = CAMO0_ASTEAMLEADER;
+						vehicle = MTP_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
@@ -77,7 +77,7 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = CAMO0_ASTEAMLEADER;
+						vehicle = MTP_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
@@ -124,7 +124,7 @@ class CfgGroups
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = CAMO0_ASTEAMLEADER;
+						vehicle = MTP_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
