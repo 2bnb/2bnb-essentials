@@ -20,7 +20,7 @@
 	Author:
 	Met
 ---------------------------------------------------------------------------- */
-params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "MTP", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
+params [["_callsign", "Raider", [""]], ["_zeusCallsign", "Monarch", [""]], ["_camo", "Multicam", [""]], ["_numberOfSections", 3, [0]], ["_createDefaults", false, [false]]];
 
 if (_callsign == "") then {
 	_callsign = "Raider";
@@ -31,10 +31,18 @@ if (_zeusCallsign == "") then {
 };
 
 if (_camo == "") then {
-	_camo = "MTP";
+	_camo = "Multicam";
 };
 
-_camo = toUpper _camo;
+_ArsenalCamo = _camo;
+
+switch (_camo) do {
+	case "Multicam": {_camo = "CAMO0"};
+	case "Desert": {_camo = "CAMO1"};
+	case "Woodland": {_camo = "CAMO2"};
+	default {_camo = "CAMO0" };
+};
+
 _nameZeus = format ["%1_zeus", _camo];
 _nameSection = format ["%1_section", _camo];
 _nameCommand = format ["%1_command", _camo];
@@ -88,7 +96,7 @@ _entities =
 	],
 	[
 		["Logic", "BNB_ES_Barracks_Module", _centralPos vectorAdd [-4, 7]],
-		["BNB_ES_Barracks_Module_ArsenalFilter", "Standard"],
+		["BNB_ES_Barracks_Module_ArsenalFilter", _ArsenalCamo],
 		["ArsenalObject", true]
 	],
 	[
