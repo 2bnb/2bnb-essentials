@@ -1,17 +1,20 @@
-#define MTP_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
-#define MTP_TEAMLEADER "BNB_FA_UK_IC_MTP"
-#define MTP_MEDIC "BNB_FA_UK_Medic_MTP"
-#define MTP_RIFLEMAN "BNB_FA_UK_Rifleman_MTP"
+#define CAMO0_ASTEAMLEADER "BNB_FA_UK_IC_MTP"
+#define CAMO0_TEAMLEADER "BNB_FA_UK_IC_MTP"
+#define CAMO0_MEDIC "BNB_FA_UK_Medic_MTP"
+#define CAMO0_RIFLEMAN "BNB_FA_UK_Rifleman_MTP"
 
-#define DESERT_ASTEAMLEADER "BNB_FA_UK_IC_Desert"
-#define DESERT_TEAMLEADER "BNB_FA_UK_IC_Desert"
-#define DESERT_MEDIC "BNB_FA_UK_Medic_Desert"
-#define DESERT_RIFLEMAN "BNB_FA_UK_Rifleman_Desert"
+#define CAMO1_ASTEAMLEADER "BNB_FA_UK_IC_Desert"
+#define CAMO1_TEAMLEADER "BNB_FA_UK_IC_Desert"
+#define CAMO1_MEDIC "BNB_FA_UK_Medic_Desert"
+#define CAMO1_RIFLEMAN "BNB_FA_UK_Rifleman_Desert"
 
-#define WOODLAND_ASTEAMLEADER "BNB_FA_UK_IC_Woodland"
-#define WOODLAND_TEAMLEADER "BNB_FA_UK_IC_Woodland"
-#define WOODLAND_MEDIC "BNB_FA_UK_Medic_Woodland"
-#define WOODLAND_RIFLEMAN "BNB_FA_UK_Rifleman_Woodland"
+#define CAMO2_ASTEAMLEADER "BNB_FA_UK_IC_Woodland"
+#define CAMO2_TEAMLEADER "BNB_FA_UK_IC_Woodland"
+#define CAMO2_MEDIC "BNB_FA_UK_Medic_Woodland"
+#define CAMO2_RIFLEMAN "BNB_FA_UK_Rifleman_Woodland"
+
+#define PILOT "UK3CB_BAF_HeliPilot_Army_MTP"
+#define CREW "UK3CB_BAF_Crewman_RTR_MTP"
 
 class ctrlMenuStrip;
 class display3DEN
@@ -49,333 +52,333 @@ class CfgGroups
 			scope = 0;
 			class infantry {
 				name = "";
-				class MTP_zeus {
+				class CAMO0_zeus {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
-				class MTP_section {
+				class CAMO0_section {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = CAMO0_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = CAMO0_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit4 {
 						position[] = {1,0,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 
 				};
-				class MTP_command {
+				class CAMO0_command {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = CAMO0_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MTP_ASTEAMLEADER;
+						vehicle = CAMO0_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = CAMO0_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class MTP_defaults {
+				class CAMO0_defaults {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MTP_TEAMLEADER;
+						vehicle = CAMO0_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1{
 						position[] = {0,-6,0};
-						vehicle = MTP_MEDIC;
+						vehicle = CAMO0_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-9,0};
-						vehicle = MTP_RIFLEMAN;
+						vehicle = CAMO0_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class DESERT_zeus {
+				class CAMO1_zeus {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = DESERT_ASTEAMLEADER;
+						vehicle = CAMO1_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = DESERT_ASTEAMLEADER;
+						vehicle = CAMO1_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
-				class DESERT_section {
+				class CAMO1_section {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = DESERT_TEAMLEADER;
+						vehicle = CAMO1_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = DESERT_ASTEAMLEADER;
+						vehicle = CAMO1_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = DESERT_MEDIC;
+						vehicle = CAMO1_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit4 {
 						position[] = {1,0,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 
 				};
-				class DESERT_command {
+				class CAMO1_command {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = DESERT_TEAMLEADER;
+						vehicle = CAMO1_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = DESERT_ASTEAMLEADER;
+						vehicle = CAMO1_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = DESERT_MEDIC;
+						vehicle = CAMO1_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class DESERT_defaults {
+				class CAMO1_defaults {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = DESERT_TEAMLEADER;
+						vehicle = CAMO1_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1{
 						position[] = {0,-6,0};
-						vehicle = DESERT_MEDIC;
+						vehicle = CAMO1_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-9,0};
-						vehicle = DESERT_RIFLEMAN;
+						vehicle = CAMO1_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class WOODLAND_zeus {
+				class CAMO2_zeus {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
+						vehicle = CAMO2_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
+						vehicle = CAMO2_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 				};
-				class WOODLAND_section {
+				class CAMO2_section {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
+						vehicle = CAMO2_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
+						vehicle = CAMO2_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = WOODLAND_MEDIC;
+						vehicle = CAMO2_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit4 {
 						position[] = {1,0,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
 						position[] = {1,-6,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 
 				};
-				class WOODLAND_command {
+				class CAMO2_command {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
+						vehicle = CAMO2_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = WOODLAND_ASTEAMLEADER;
+						vehicle = CAMO2_ASTEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = WOODLAND_MEDIC;
+						vehicle = CAMO2_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {
 						position[] = {0,-9,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
-				class WOODLAND_defaults {
+				class CAMO2_defaults {
 					name = "";
 					scope = 0;
 					faction = "BLU_F";
 					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = WOODLAND_TEAMLEADER;
+						vehicle = CAMO2_TEAMLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1{
 						position[] = {0,-3,0};
-						vehicle = WOODLAND_MEDIC;
+						vehicle = CAMO2_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit2 {
 						position[] = {0,-6,0};
-						vehicle = WOODLAND_RIFLEMAN;
+						vehicle = CAMO2_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};
