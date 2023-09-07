@@ -81,8 +81,8 @@ class bnb_es_edenGUI {
 
 			class Items {
 				class MTP {
-					text = "MTP";
-					data = "MTP";
+					text = "Multicam";
+					data = "Multicam";
 				};
 				class Desert {
 					text = "Desert";
