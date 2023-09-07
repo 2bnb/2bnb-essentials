@@ -221,4 +221,11 @@ class CfgUnitInsignia
 		author="Hex";
 		texture="x\bnb_es\custom_patches\img\Hex.paa";
 	};
+
+	class BNB_ES_Sunderland
+	{
+		displayName="Sunderland";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Sunderland.paa";
+	};
 };
