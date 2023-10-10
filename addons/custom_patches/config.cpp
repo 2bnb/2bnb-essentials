@@ -228,4 +228,11 @@ class CfgUnitInsignia
 		author="Met";
 		texture="x\bnb_es\custom_patches\img\Sunderland.paa";
 	};
+
+	class BNB_ES_Friesland
+	{
+		displayName="Friesland";
+		author="Met";
+		texture="x\bnb_es\custom_patches\img\Friesland.paa";
+	};
 };
