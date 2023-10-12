@@ -87,6 +87,19 @@ player addEventHandler ["Respawn", {
 	[format["%1 respawned at: %2. Died at: %3", name _player, serverTime, _player getVariable "bnb_es_diedAt"], "core\XEH_postInit.sqf"] call bnb_es_core_fnc_log;
 }];
 
+{
+	["unit", {
+		private _remoteControlled = allUnits select {
+			!isNull (_x getvariable ["bis_fnc_moduleRemoteControl_owner", objNull])
+		};
+		if (_remoteControlled isNotEqualTo []) then {
+			{
+				_x setVariable ["WBK_DAH_DisableAnim_Hit",1];
+			} forEach _remoteControlled;
+		}
+	}] call CBA_fnc_addPlayerEventHandler;
+} forEach allCurators;
+
 // Pass magazine keybinding
 [
 	"2BNB",
