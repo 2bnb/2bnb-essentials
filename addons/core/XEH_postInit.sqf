@@ -98,10 +98,11 @@ player addEventHandler ["Respawn", {
 		};
 		if (_remoteControlled isNotEqualTo []) then {
 			{
+				diag_log "Hit Anims Disabled";
 				_x setVariable ["WBK_DAH_DisableAnim_Hit", 1, true];
 			} forEach _remoteControlled;
 		}
-	}] call CBA_fnc_addPlayerEventHandler;
+	}] remoteExec ["CBA_fnc_addPlayerEventHandler",0];
 } forEach allCurators;
 
 // Pass magazine keybinding
