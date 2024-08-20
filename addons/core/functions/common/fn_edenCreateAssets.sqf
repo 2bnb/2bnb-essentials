@@ -40,6 +40,7 @@ switch (_camo) do {
 	case "Multicam": {_camo = "CAMO0"};
 	case "Desert": {_camo = "CAMO1"};
 	case "Woodland": {_camo = "CAMO2"};
+	case "Winter": {_camo = "CAMO3"};
 	default {_camo = "CAMO0" };
 };
 
@@ -48,7 +49,7 @@ _nameSection = format ["%1_section", _camo];
 _nameCommand = format ["%1_command", _camo];
 _nameDefaults = format ["%1_defaults", _camo];
 
-_centralPos = screenToWorld [0, 0];
+_centralPos = getPosATL get3DENCamera;
 _entities =
 [
 	[
