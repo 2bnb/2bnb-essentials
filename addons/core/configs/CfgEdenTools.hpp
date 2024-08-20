@@ -13,6 +13,12 @@
 #define CAMO2_MEDIC "BNB_FA_UK_Medic_Woodland"
 #define CAMO2_RIFLEMAN "BNB_FA_UK_Rifleman_Woodland"
 
+#define CAMO3_ASTEAMLEADER "BNB_FA_UK_IC_Winter"
+#define CAMO3_TEAMLEADER "BNB_FA_UK_IC_Winter"
+#define CAMO3_MEDIC "BNB_FA_UK_Medic_Winter"
+#define CAMO3_RIFLEMAN "BNB_FA_UK_Rifleman_Winter"
+
+
 #define PILOT "UK3CB_BAF_HeliPilot_Army_MTP"
 #define CREW "UK3CB_BAF_Crewman_RTR_MTP"
 
@@ -379,6 +385,116 @@ class CfgGroups
 					class Unit2 {
 						position[] = {0,-6,0};
 						vehicle = CAMO2_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+				};
+							class CAMO3_zeus {
+					name = "";
+					scope = 0;
+					faction = "BLU_F";
+					side = 1;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = CAMO3_ASTEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {1,0,0};
+						vehicle = CAMO3_ASTEAMLEADER;
+						rank = "PRIVATE";
+					};
+				};
+				class CAMO3_section {
+					name = "";
+					scope = 0;
+					faction = "BLU_F";
+					side = 1;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = CAMO3_TEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = CAMO3_ASTEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit2 {
+						position[] = {0,-6,0};
+						vehicle = CAMO3_MEDIC;
+						rank = "PRIVATE";
+					};
+					class Unit3 {
+						position[] = {0,-9,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+					class Unit4 {
+						position[] = {1,0,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+					class Unit5 {
+						position[] = {1,-3,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+					class Unit6 {
+						position[] = {1,-6,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+					class Unit7 {
+						position[] = {1,-9,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+
+				};
+				class CAMO3_command {
+					name = "";
+					scope = 0;
+					faction = "BLU_F";
+					side = 1;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = CAMO3_TEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit1 {
+						position[] = {0,-3,0};
+						vehicle = CAMO3_ASTEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit2{
+						position[] = {0,-6,0};
+						vehicle = CAMO3_MEDIC;
+						rank = "PRIVATE";
+					};
+					class Unit3 {
+						position[] = {0,-9,0};
+						vehicle = CAMO3_RIFLEMAN;
+						rank = "PRIVATE";
+					};
+				};
+				class CAMO3_defaults {
+					name = "";
+					scope = 0;
+					faction = "BLU_F";
+					side = 1;
+					class Unit0 {
+						position[] = {0,0,0};
+						vehicle = CAMO3_TEAMLEADER;
+						rank = "PRIVATE";
+					};
+					class Unit1{
+						position[] = {0,-3,0};
+						vehicle = CAMO3_MEDIC;
+						rank = "PRIVATE";
+					};
+					class Unit2 {
+						position[] = {0,-6,0};
+						vehicle = CAMO3_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 				};

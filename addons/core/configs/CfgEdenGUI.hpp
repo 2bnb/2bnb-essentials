@@ -92,6 +92,10 @@ class bnb_es_edenGUI {
 					text = "Woodland";
 					data = "Woodland";
 				};
+				class Winter {
+					text = "Winter";
+					data = "Winter";
+				};
 			};
 		};
 
