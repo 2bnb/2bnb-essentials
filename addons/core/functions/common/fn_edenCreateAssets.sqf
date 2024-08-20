@@ -49,7 +49,7 @@ _nameSection = format ["%1_section", _camo];
 _nameCommand = format ["%1_command", _camo];
 _nameDefaults = format ["%1_defaults", _camo];
 
-_centralPos = screenToWorld [0, 0];
+_centralPos = getPosATL get3DENCamera;
 _entities =
 [
 	[
