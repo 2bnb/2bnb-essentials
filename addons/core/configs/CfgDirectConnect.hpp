@@ -8,8 +8,8 @@ Author:
 	Arend
 ---------------------------------------------------------------------------- */
 class CfgMainMenuSpotlight {
-	class bnb_es_miniOps_server {
-		text = "Mini-ops Server";
+	class bnb_es_Training_server {
+		text = "Training Server";
 		textIsQuote = 0;
 		picture = "\x\bnb_es\core\2bnb-tile.paa";
 		video = "\x\bnb_es\core\2bnb-tile.ogv";
