@@ -373,7 +373,7 @@ class CfgUnitInsignia
 	{
 		displayName = "Thunderbird 2";
 		author = "Met";
-		texture = "x\bnb_es\custom_patches\img\Thunderbird2.paa";
+		texture = "x\bnb_es\custom_patches\img\Thunderbird_2.paa";
 	};
 
 	class WMAA_Patch_Red
